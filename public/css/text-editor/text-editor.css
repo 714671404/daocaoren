@@ -1,0 +1,26 @@
+#text-editor {
+    width: 100%;
+    box-shadow: 0 1px 11px 3px rgba(42, 42, 42, .1);
+}
+#edit-content {
+    min-height: 600px;
+    background: #fff;
+    padding: 10px 15px;
+}
+#edit-content p {
+    margin: 0;
+    padding: 0;
+}
+.toolbar-but {
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+.toolbar-but>button {
+    background: #fff;
+    padding: 10px 18px;
+    color: #777;
+}
+.toolbar-but>button:hover {
+    background: #eee;
+}
