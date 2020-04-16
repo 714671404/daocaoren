@@ -11,6 +11,7 @@
     <div id="app">
         <?php include __DIR__ . '/../layouts/header.php'?>
         <section class="main">
+			<!-- 轮播图片
 			<div class="banner">
 				<div class="slide">
 					<ul class="slide-wrapper">
@@ -22,11 +23,17 @@
 					<ul class="slide-page"></ul>
 				</div>
 			</div>
+			-->
+
 			<div class="content layout">
 				<div class="main-left">
-					<div></div>
+					<div class="">
+
+					</div>
 				</div>
-				<div class="main-right">22222222222222222222222222222</div>
+
+
+				<div class="main-right"></div>
 			</div>
 		</section>
         <?php include __DIR__ . '/../layouts/footer.php'?>
