@@ -7,31 +7,41 @@ input{box-sizing: border-box;}
 button {cursor: pointer;}
 .btn {display: inline-block;}
 
+/* ico图标 */
 
 @font-face {font-family: "iconfont";
-	src: url('iconfont.eot?t=1587117827543'); /* IE9 */
-	src: url('iconfont.eot?t=1587117827543#iefix') format('embedded-opentype'), /* IE6-IE8 */
-	url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANkAAsAAAAABzgAAAMVAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqCHIIbATYCJAMMCwgABCAFhG0HORtkBsguIScbXqQoTUx1OTYGDeTyhsLw8UcEX/uh++4uyCpRgDKSQEdlohiEh4JKja8RaKtRVRLrPzBOB6FLkc5K89nYSFWhDW6HQv7CWturV1tILw5JXHcmux1S6dYIhUSOwAacZItpPoxyAl7+9kLQ1J2sBqj3iXunzfPA5rMslzlojYGfugDjgAIdc5IVSEDeMHZBS9xMoNEAEeDyytYRpBVmr0Cc6+o9pDM+RWHJeqG2YmIRTyTUp8fpBbgPvh9f9QNBUpOZA9cOl59g7tPJ5zW4oeLKI5FMZwGbRsYkgEJsVto2xKLYJLBGVRnXqgFqFSFNFfyvCMSatnajf7xE1DILm8EojCc+6fAIPu0KCWRQi4J14AbSu5+VRV8fmer9o+3FgYm33ljMHY26uuJOztHvFtvb3fyhKi5j6EpGPO5ZPuYeFY96x+bPqZuP6Pu5VjcnKBvRrnh1L1KDb6NLEJ9ige6Y5sTsANrxwSwcxU9+XVdRqB6TQ5SXzYaqpF7rkPueih9froImN5m9SfDLa/CkJUBCV4wPcTm2c3F4+anIxP7XWP8+Xm+k8CZSDuaOvQDwX1ETvX8KbD+6eruob1Q3IkFoLgY+zKfXgCZX8b3JGQ5BgErezkKA6kCL/g2/Mffm5QB++n99CvjQBTD0Vgqgu0H9SdqDly7pWFM0HawpitgRG45s4QYsCSjkTlWmq1N+uLancyGhXk+CpE4/snqD5EKfRI0mU6hVbw6NJtimN+lSISZKA8a1AoR2+0haPUPW7pVc6DnU6PWHWu0BRqP16FqwyXCUZpeY7oWe8OEN9UfXUWyjZMPiA1JD657TsoB5QhzoQexJZPnkKjnEUwwJntW+iIIKuzaugO3Islz02DXoUdqaiDfbkRZVvan96NqQtYSRe4I8QWFvUKlHLofiNRbZwucPEFXIco8bCFX+E4QF9NaRnISsA3lV7XQi3Mo1lZ6p+qoIBSrCXDZkBRZiWTEXKqtuZyCPRFvJgIhnlhTVK+qqbi+vtd9vEzQyV86RIkdRd607qhU6iR39VXcAAAAAAA==') format('woff2'),
-	url('iconfont.woff?t=1587117827543') format('woff'),
-	url('iconfont.ttf?t=1587117827543') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
-	url('iconfont.svg?t=1587117827543#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1587197371892'); /* IE9 */
+  src: url('iconfont.eot?t=1587197371892#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAQ8AAsAAAAACIQAAAPvAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDMgqEJIN4ATYCJAMUCwwABCAFhG0HSBuEB1GUD0qH7EeC6XYXKUyEGtnJ7GQuncGnhr8PJefh+7Xfue/dXUQkiUa6TycRIuknKIkEJVGqhq7TfTpxh/KywboAHFTQUXgFB/Hd/Z/LHLONUEfyFG6s0Bfyfzl9aTp0+//vnf7f8DCc157lMsfwPnUC6kQTKKAxNgcYWAElyg1jF5dRp9hlAoNW2YOnkc9v0Ja0WYHo0daBdswoSypDv9DmbExxC4T6yzW6D4Ab9/vxB1yjTdFU2sKzixsfjp/yn67h/qV++TYGRP3ZwWyjYg+QxGWus6fmJ/dgg9Lv6g6BQf2K8in/QfHT8U/Xljpk6YrUg/ofHqGokmhp5cPgECkyJzIRwaciovB9HFH5via+McrGnj6IAdwB/jF1TVn3+z1iQbXTH9dazRZ/XfjCZTJMOuiOnNytjdbskVOa2qeH1+4tB/3qspWacOdBuO7S1AWd/v158nAbH3WDNali2Qyez2pjqJBZ/hY2S47lzbrJy9qreZCDJfxyfu7uSS7WMn37Xr0s57hVGj5nWLk2T6SzGSscVmSt3HRKY88duVtBq3bsWa2+m5nkuijWH9w9acv1sXCKDbjEu8J7QStQUW9vIdJ5Ns8fsCJI+6dolfindrBLE68S5crniIudk0XogGB1BcKXUFAPzhVoLMgSErdsMQfqAmkTIqYmaEQhSEcEIu0UosMDif0PR/Gxw4JRddPjmmPo4Tg6pmmqzvOSC8CGebmYGZ0KD8HxX7+OWzIBNQmOh4/41hoa+FH6auMuBeWKr67uQGsKdVzW4Pv38Rqdh/iWED8C8mwSc9PyZn2epul9CQnVnz+2a0DdevXjGJ1E4wDvwOZZrhvN7YNj5Nn3p/sG/AcQz7ORcCyZ243sI/F/0DwO2gG667VsHAqgW1FPYFphsrV92E7+31XL/QrLfISv0y8a+f+XyCVQw2XuHAp0KxKY8H2q1Ba9eFHNmpQlmqlJsdoUiuMaR2qgMC2DeN3eSS/6Uc/ULif0mwmh6LMCVb81PKl70BiyD61+BzBoV9T2IVMa1UQOYMcIgDDuEBSj7qEa9wBP6nNozPoOrfGowaDzUDtwyEaEsrBGcpR8dH8w9DgzhkW7XuUL2TJxJCpxGR8kRRjB3XqbzNxRRtLHkuLT7lUNGuEUb8F1lCSMuXBEnq4D1fyw2Zi8F609TqHrhCAORXyo1A9E87CMsZurburzL4hVSjikhFDi/kBEIewfuXDkXAO/U2a1COcyvMkna6+ZMngaQbAUioR2kuhJhurzx0WIR61RLeK5AydUj6irXI+vTq9xDwzSHmiiRI2MJlr1qoWbHXWZDcpWPe2MSsqsUUJ/hxkAAA==') format('woff2'),
+  url('iconfont.woff?t=1587197371892') format('woff'),
+  url('iconfont.ttf?t=1587197371892') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1587197371892#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
-	font-family: "iconfont" !important;
-	font-size: 12px;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-suo:before {
+  content: "\e60c";
+}
+
+.icon-yonghu:before {
+  content: "\e60e";
 }
 
 .icon-pinglun:before {
-	content: "\e8b4";
+  content: "\e8b4";
 }
 
 .icon-aixin:before {
-	content: "\e8c3";
+  content: "\e8c3";
 }
+
 
 
 body {
@@ -79,6 +89,7 @@ body {
 .navbar>.nav>li>a {
 	display: inline-block;
 	padding: 0 15px;
+	font-size: 14px;
 }
 .navbar>.nav>li>a:hover {
 	background: #f0f0f0;
@@ -97,50 +108,52 @@ body {
 	margin-left: 3em;
 	width: 250px;
 }
-.auth {
+.navbar>.auth {
 	float: right;
 	margin-right: 15px;
 	height: 52px;
 }
-.auth:before {
+.navbar>.auth:before {
 	content:"";
     display:inline-block;
     height: 100%;
     vertical-align:middle;
 }
-.auth>.btn {
+.navbar>.auth>.btn {
 	border: 1px solid #ea6f5a;
 	border-radius: 13px;
 	padding: 5px 20px;
 	vertical-align: middle;
 }
-.auth>.login-btn {
+.navbar>.auth>.login-btn {
 	color: #ea6f5a;
 }
-.auth>.register-btn {
+.navbar>.auth>.register-btn {
 	color: #fff;
 	background: #ea6f5a;
 	margin-left: 10px;
 }
-
-/* 内容 */
+/* 首页内容 */
 .container {
 	width: 1000px;
 	margin: 25px auto;
 	overflow: hidden;
+}
+.box {
 	background: #fff;
-	padding: 15px 25px;
-	-webkit-box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
-    box-shadow: 0 1px 2px 0 rgba(101,129,156,.08);
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,.1);
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
 	border-radius: 5px;
 }
 .main {
 	float: left;
-	width: 100%;
 	/*
 	sidebar开启式启用即可
-	width: 65%;
+	width: 67%;
 	*/
+}
+.main-list {
+	margin: 15px 25px;
 }
 .main-list>li {
 	padding: 15px 0;
@@ -183,7 +196,59 @@ body {
 	float: right;
 	width: 30%;
 	height: 300px;
-	background: red;
+}
+
+/* auth */
+.container>.auth {
+	width: 600px;
+	margin: 0 auto;
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+.auth>.title {
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 30px;
+}
+.auth>form {
+	width: 400px;
+	margin: 0 auto;
+}
+.auth>form>.input-layouts {
+	height: 45px;
+	line-height: 45px;
+	position: relative;
+	background: rgba(181, 181, 181, 0.1);
+	border: 1px solid #c8c8c8;
+	border-radius: 3px;
+}
+.auth>form>.input-layouts+.input-layouts {
+	border-top: 1px solid #c8c8c8;
+}
+.auth>form>.input-layouts>input {
+	width: 100%;
+	height: 45px;
+	background: rgba(181, 181, 181, 0.1);
+	padding-left: 40px;
+}
+.auth>form>.input-layouts>.iconfont {
+	position: absolute;
+	top: 1px;
+	left: 8px;
+}
+.auth>form>.blue-btn {
+	margin-top: 15px;
+}
+.blue-btn {
+	width: 100%;
+	padding: 10px 20px;
+	background: #0084ff;
+	color: #fff;
+	border-radius: 5px;
+}
+.blue-btn:hover {
+	border-color: #0077e6;
+	background-color: #0077e6;
 }
 
 /* 底部 */
