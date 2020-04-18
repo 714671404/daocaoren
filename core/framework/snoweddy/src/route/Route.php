@@ -38,7 +38,7 @@ class Route
             $url = substr($url, 0, $position);
         }
 
-        // 判断url是不是控
+        // 判断url是不是空
         $url = $url ? $url : '/';
 
         // 初始化属性

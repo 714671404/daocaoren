@@ -11,16 +11,16 @@
 		<?php include __DIR__ . '/../layouts/header.php'?>
 		
 		<section class="container">
-			<div class="main">
+			<div class="main box">
 				<ul class="main-list">
 					<li>
 						<div class="content">
-							<a href="" class="title">配置 macOS 本地环境</a>
+							<a href="/article/1" class="title">配置 macOS 本地环境</a>
 							<p class="text">让命令行看起来更简单 内容如下 让配置生效 接着需要安装 macOS 系统的命令行工具，执行如下命令 这样的安装命令会删除旧版本的命令行工具包，...</p>
 							<div class="meta">
 								<a href="" class="nickname">候鸟与暖风</a>
-								<a href=""><i class="icon iconfont icon-pinglun"></i>2</a>
-								<span><i class="icon iconfont icon-aixin"></i>0</span>
+								<a href=""><i class="iconfont icon-pinglun"></i>2</a>
+								<span><i class="iconfont icon-aixin"></i>0</span>
 								<span>2020-4-17</span>
 							</div>
 						</div>
@@ -43,9 +43,9 @@
 					-->
 					
 				</ul>
-			</div>
+			</div>	
 			<!--
-			<aside class="sidebar"></aside>
+			<aside class="sidebar box"></aside>
 			-->
 		</section>
 		
