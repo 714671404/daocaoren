@@ -51,7 +51,7 @@ class DB
      */
     public function query($sql)
     {
-        $rule = $this->dbh->query($sql);
+        return $this->dbh->query($sql);
     }
 
     /*

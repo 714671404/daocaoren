@@ -100,5 +100,36 @@
             }
         },
     };
-    return Lib;
+    return obj;
 });
+
+document.querySelector(".auth .blue-btn").onclick = function() {
+	var 
+		form = document.querySelector(".auth form"),
+		name = form.name.value,
+		username = form.username.value,
+		pass = form.pass.value,
+		str;
+	
+	if ((name.length >= 2) && (username.length > 5) && (pass.length >= 6)) {
+		str = "qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM";
+		for (var i = 0; i < username.length; i ++) {
+			if (str.indexOf(username[i]) < 0) break;
+		}
+		lib.ajax({
+			url: '/register',
+			type: 'post',
+			data: {
+				name: name,
+				username: username,
+				password: pass
+			},
+			success: function(data) {
+				console.log(JSON.parse(data));
+			}
+		});
+		alert('ok');
+	} else {
+		alert('no');
+	}
+}

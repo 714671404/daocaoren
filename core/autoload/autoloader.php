@@ -38,6 +38,7 @@ class Autoloader
             'snoweddy\\src\\db\\DB' => APP_PATH . '/core/framework/snoweddy/src/db/DB.php',
             'snoweddy\\src\\db\\DBDome' => APP_PATH . '/core/framework/snoweddy/src/db/DBDome.php',
             'snoweddy\\src\\route\\Route' => APP_PATH . '/core/framework/snoweddy/src/route/Route.php',
+            'snoweddy\\src\\library\\Response' => APP_PATH . '/core/framework/snoweddy/src/library/Response.php',
         ];
     }
 }
