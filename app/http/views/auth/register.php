@@ -12,24 +12,25 @@
 		<section class="container">
 			<div class="auth box">
 				<h3 class="title">注册</h3>
-				<form action="/register" method="post">
+				<form>
 					<div class="input-layouts">
-						<input type="text" name="username" placeholder="设置昵称">
+						<input type="text" name="name" placeholder="设置昵称">
 						<i class="iconfont icon-yonghu"></i>
 					</div>
 					<div class="input-layouts">
-						<input type="text" name="user" placeholder="请输入会员账号">
+						<input type="text" name="username" placeholder="请输入会员账号">
 						<i class="iconfont icon-yonghu"></i>
 					</div>
 					<div class="input-layouts">            
 						<input type="password" name="pass" placeholder="请输入密码">
 						<i class="iconfont icon-suo"></i>
 					</div>
-					<button class="btn blue-btn">注册</button>
+					<button type="button" class="btn blue-btn">注册</button>
 				</form>
 			</div>
 		</section>
 		<?php include __DIR__ . "/../layouts/footer.php"?>
 	</div>
+	<script src="/js/app.js" type="text/javascript"></script>
 </body>
 </html>
