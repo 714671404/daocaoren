@@ -4,12 +4,15 @@ namespace app\http\controllers\auth;
 
 use snoweddy\src\base\Controller;
 use app\http\models\User;
+use app\common\Verification;
 
 class RegisterController extends Controller
 {
+	use Verification;
 	
 	public function show()
 	{
+		dd(strpos('user|pass', '.'));
 		return $this->view('auth/register');
 	}
 	

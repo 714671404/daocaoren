@@ -21,8 +21,6 @@ class Controller
      */
     protected function view($path, array $data = [])
     {
-        $this->_view->view($path, $data);
+        return $this->_view->view($path, $data);
     }
-
-
 }
