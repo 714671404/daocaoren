@@ -9,8 +9,13 @@ class RegisterController extends Controller
 {
 	
 	public function show()
-	{		
+	{
 		return $this->view('auth/register');
+	}
+	
+	public function test()
+	{
+		echo 1;
 	}
 	
 	public function register()
