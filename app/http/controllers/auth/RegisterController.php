@@ -4,7 +4,7 @@ namespace app\http\controllers\auth;
 
 use snoweddy\src\base\Controller;
 use app\http\models\User;
-use app\common\Verification;
+use app\common\Validator;
 
 class RegisterController extends Controller
 {
@@ -19,11 +19,12 @@ class RegisterController extends Controller
 	
 	public function test()
 	{
-		return $this->validator([
+		$a = $this->validator([
 			'name' => '夏',
-			// 'username' => 'snoweddy',
-			// 'password' => 'yuefei12'
+			'username' => 'snoweddy',
+			'password' => 'yuefei12'
 		]);
+		dd($a);
 	}
 	
 	/*
@@ -61,10 +62,14 @@ class RegisterController extends Controller
 	 */
 	protected function validator($data)
 	{
-		return Verification::validator($data, [
+		return Validator::make($data, [
 			'name' => 'required|min:3|max:25',
-			// 'username' => 'required',
-			// 'password' => 'required'
+			'username' => 'required|min:6|max:25',
+			'password' => 'required|min:6|max:25'
+		], [
+			'name' => '昵称',
+			'username' => '账号',
+			'password' => '密码'
 		]);
 	}
 }
