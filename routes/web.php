@@ -10,3 +10,5 @@ Route::get('article/{id}', 'article\ArticleController@show');
 Route::get('login', 'auth\LoginController@show');
 Route::get('register', 'auth\RegisterController@show');
 Route::post('register', 'auth\RegisterController@register');
+
+Route::get('test', 'auth\RegisterController@test');

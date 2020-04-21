@@ -8,23 +8,41 @@ use app\common\Verification;
 
 class RegisterController extends Controller
 {
-	use Verification;
 	
+	/*
+	 * 展示注册页面
+	 */
 	public function show()
 	{
-		dd(strpos('user|pass', '.'));
 		return $this->view('auth/register');
 	}
 	
 	public function test()
 	{
-		echo 1;
+		return $this->validator([
+			'name' => '夏',
+			// 'username' => 'snoweddy',
+			// 'password' => 'yuefei12'
+		]);
 	}
 	
+	/*
+	 * 注册
+	 */
 	public function register()
 	{
 		$user = new User();
-		if ($_POST['name'] && $_POST['username'] && $_POST['password']) {
+		if ($this->validator([
+			'name' => $_POST['name'],
+			'username' => $_POST['username'],
+			'password' => $_POST['password']
+		])) {
+			echo 'ok';
+		} else {
+			echo 'no';
+		}
+		/*
+			if ($_POST['name'] && $_POST['username'] && $_POST['password']) {
 			$result = $user->add_user([
 				'name' => $_POST['name'],
 				'username' => $_POST['username'],
@@ -35,5 +53,18 @@ class RegisterController extends Controller
 				'status' => 200
 			]);
 		}
+		*/
+	}
+	
+	/*
+	 * 调用验证函数
+	 */
+	protected function validator($data)
+	{
+		return Verification::validator($data, [
+			'name' => 'required|min:3|max:25',
+			// 'username' => 'required',
+			// 'password' => 'required'
+		]);
 	}
 }
