@@ -49,18 +49,19 @@ class Verification
 						$placeholder = self::$placeholder;
 						$message = $err_message[$key];
 					}
-					return self::replace(
+					exit(self::replace(
 						$placeholder,
 						$message,
 						self::$message[$method]
-					);
+					));
 				}
 			}
 		}
+		return true;
 	}
 	
 	/*
-	 *
+	 * 处理错误信息
 	 */
 	protected static function replace($placeholder, $message, $error_message)
 	{
@@ -78,13 +79,13 @@ class Verification
 	 */
 	protected static function min($string, $rule)
 	{
-		return strlen($string) > $rule ? true : false;
+		return strlen($string) >= $rule ? true : false;
 	}
 	/*
 	 * 验证不能大于n
 	 */
 	protected static function max($string, $rule)
 	{
-		return strlen($string) < $rule ? true : false;
+		return strlen($string) <= $rule ? true : false;
 	}
 }

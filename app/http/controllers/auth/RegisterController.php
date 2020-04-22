@@ -20,7 +20,7 @@ class RegisterController extends Controller
 	public function test()
 	{
 		$a = $this->validator([
-			'name' => '夏',
+			'name' => 'xia',
 			'username' => 'snoweddy',
 			'password' => 'yuefei12'
 		]);
@@ -33,28 +33,19 @@ class RegisterController extends Controller
 	public function register()
 	{
 		$user = new User();
-		if ($this->validator([
+		
+		$data = [
 			'name' => $_POST['name'],
 			'username' => $_POST['username'],
 			'password' => $_POST['password']
-		])) {
-			echo 'ok';
-		} else {
-			echo 'no';
-		}
-		/*
-			if ($_POST['name'] && $_POST['username'] && $_POST['password']) {
-			$result = $user->add_user([
-				'name' => $_POST['name'],
-				'username' => $_POST['username'],
-				'password' => $_POST['password']
-			]);
+		];
+		if ($data) {
+			$rsult = $user->add_user($data);
 			return response([
 				'data' => $result,
 				'status' => 200
 			]);
 		}
-		*/
 	}
 	
 	/*

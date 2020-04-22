@@ -12,3 +12,4 @@ Route::get('register', 'auth\RegisterController@show');
 Route::post('register', 'auth\RegisterController@register');
 
 Route::get('test', 'auth\RegisterController@test');
+Route::post('test', 'auth\RegisterController@test');
