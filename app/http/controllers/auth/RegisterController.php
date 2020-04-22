@@ -32,8 +32,7 @@ class RegisterController extends Controller
 	 */
 	public function register()
 	{
-		$user = new User();
-		
+		$user = new User();	
 		$data = [
 			'name' => $_POST['name'],
 			'username' => $_POST['username'],
@@ -42,7 +41,7 @@ class RegisterController extends Controller
 		if ($data) {
 			$rsult = $user->add_user($data);
 			return response([
-				'data' => $result,
+				'data' => $rsult,
 				'status' => 200
 			]);
 		}

@@ -24,12 +24,12 @@ class User extends Model
             $array['password']
         );
 		$result = $this->db->exec($sql);
-		
+		// 获取id与username加入查询条件
 		if ($result) {
 			$sql = sprintf(
-				"select id, name, username from %s where username='%s'",
+				"select id, name, username from %s where id='%s'",
 				$this->table,
-				$array['username']
+				$result
 			);
 			foreach ($this->db->query($sql) as $row) {
 				return [

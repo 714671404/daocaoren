@@ -128,8 +128,5 @@ document.querySelector(".auth .blue-btn").onclick = function() {
 				console.log(JSON.parse(data));
 			}
 		});
-		alert('ok');
-	} else {
-		alert('no');
 	}
 }

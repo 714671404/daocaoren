@@ -43,7 +43,10 @@ class DB
      */
     public function exec($sql)
     {
-        return $this->dbh->exec($sql);
+		if ($this->dbh->exec($sql)) {
+			return $this->dbh->lastInsertId();	
+		}
+        return false;
     }
 
     /*
