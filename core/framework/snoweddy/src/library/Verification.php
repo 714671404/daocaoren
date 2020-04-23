@@ -6,6 +6,7 @@ class Verification
 {
 	protected static $placeholder = '{attribute}';
 	protected static $message = '';
+	protected static $error_message = '';
 	public static function validator($data, $rule, $err_message)
 	{
 		self::$message = include APP_PATH . '/resources/lang/en/validator.php';
@@ -49,15 +50,18 @@ class Verification
 						$placeholder = self::$placeholder;
 						$message = $err_message[$key];
 					}
-					exit(self::replace(
-						$placeholder,
-						$message,
-						self::$message[$method]
-					));
-				}
+                    self::$error_message = self::replace(
+                        $placeholder,
+                        $message,
+                        self::$message[$method]
+                    );
+					return false;
+				} else {
+				    return true;
+                }
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	/*

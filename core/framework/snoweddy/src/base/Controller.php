@@ -23,4 +23,8 @@ class Controller
     {
         return $this->_view->view($path, $data);
     }
+    protected function redirect($uri)
+    {
+        return $this->_view->redirect($uri);
+    }
 }

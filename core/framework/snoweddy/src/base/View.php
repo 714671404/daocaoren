@@ -19,9 +19,13 @@ class View
 
         //判断视图文件是否存在
         if (is_file($content)) {
-            include $content;
+            return include $content;
         } else {
             echo "<h1 style='color: red;'>无法找到视图文件!</h1>";
         }
+    }
+    public function redirect($uri)
+    {
+        return header('location:' . $uri);
     }
 }

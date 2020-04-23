@@ -32,21 +32,36 @@ class RegisterController extends Controller
 	 */
 	public function register()
 	{
-		$user = new User();	
-		$data = [
-			'name' => $_POST['name'],
-			'username' => $_POST['username'],
-			'password' => $_POST['password']
-		];
-		if ($data) {
-		    $result = $user->add_user($data);
+	    // 注册验证开发中
+        $data = [
+            'name' => $_POST['name'],
+            'username' => $_POST['username'],
+            'password' => $_POST['password']
+        ];
+        $result = $this->validator($data);
+        if ($result) {
+            $user = new User();
+            $result = $user->add_user($data);
+            // 封装session后继续完成登录功能
+            $_SESSION['name'] = $result['name'];
+            $_SESSION['username'] = $result['username'];
+            return $this->redirect('/');
+        } else {
+            echo '<script>alert(\'注册信息格式不正确!\');</script>';
+            return $this->view('auth/register');
+        }
 
+	    /*
+	     $user = new User();
 
-		    return response([
-				'data' => $result,
-				'status' => 200
-			]);
-		}
+		if (!$this->validator($data)) {
+            $result = $user->add_user($data);
+            return response([
+                'data' => $result,
+                'status' => 200
+            ]);
+        }
+	     * */
 	}
 	
 	/*

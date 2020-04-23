@@ -28,6 +28,7 @@ class App
 
     public function http()
     {
+        session_start();
         header("Content-type:text/html;charset=utf-8");
         $this->setReporting();
         $this->removeMagicQuotes();

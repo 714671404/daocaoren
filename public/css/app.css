@@ -251,7 +251,12 @@ body {
 	border-color: #0077e6;
 	background-color: #0077e6;
 }
-
+.auth>form>.input-layouts>.error {
+	position: absolute;
+	right: 10px;
+	color: #FF0913;
+	display: none;
+}
 /* 底部 */
 .footer {
 	background: #414141;
