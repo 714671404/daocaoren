@@ -39,9 +39,11 @@ class RegisterController extends Controller
 			'password' => $_POST['password']
 		];
 		if ($data) {
-			$rsult = $user->add_user($data);
-			return response([
-				'data' => $rsult,
+		    $result = $user->add_user($data);
+
+
+		    return response([
+				'data' => $result,
 				'status' => 200
 			]);
 		}
