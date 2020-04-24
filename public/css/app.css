@@ -67,7 +67,7 @@ body {
 	max-width: 1440px;
 	margin: 0 auto;
 	height: 52px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 .logo {
 	float: left;
@@ -96,7 +96,7 @@ body {
 	color: #333;
 }
 .select {
-	float: right;
+	float: left;
 	line-height: 52px;
 	margin-right: 5em;
 }
@@ -133,6 +133,49 @@ body {
 	background: #ea6f5a;
 	margin-left: 10px;
 }
+.auth>.user {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	height: 100%;
+	width: 60px;
+	vertical-align: middle;
+}
+.auth>.user>img {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-top: 5px;
+}
+.auth>.user:hover .nav {
+	display: block;
+}
+.auth>.user>.nav {
+	width: auto;
+	position: absolute;
+	white-space: nowrap;
+	top: 53px;
+	right: -21px;
+	display: none;
+	border: 1px solid #f5f5f5;
+	box-shadow: 0 2px 8px rgba(0,0,0,.1);
+
+}
+.auth>.user:hover {
+	cursor: pointer;
+}
+.auth>.user>.nav>li>a {
+	display: inline-block;
+	width: 100px;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	background: #fff;
+}
+.auth>.user>.nav>li>a:hover {
+	background: #f5f5f5;
+}
+
 /* 首页内容 */
 .container {
 	width: 1000px;
