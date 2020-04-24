@@ -41,4 +41,9 @@ class User extends Model
 		}
         return false;
     }
+    public function where($sql)
+    {
+        $i = 0;
+        $data = [];
+    }
 }

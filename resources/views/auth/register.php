@@ -49,6 +49,17 @@
                     index = this.getAttribute('data-index') - 1,
                     error_mes = validator(this.value, index);
 
+                if (index === 1) {
+                    lib.ajax({
+                        url: '/user',
+                        data: {
+                            username: this.value
+                        },
+                        success: function(data) {
+                            console.log(data);
+                        }
+                    });
+                }
                 if (error_mes !== true) {
                     error_message[index].style.display = 'inline';
                     error_message[index].innerHTML = ['昵称', '账号', '密码'][index] + error_mes;

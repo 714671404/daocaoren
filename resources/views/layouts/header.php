@@ -23,13 +23,9 @@
                 <img src="/images/avatar/default.jpg">
                 <ul class="nav">
                     <li><a href="/">个人中心</a></li>
-                    <li><a href="/">个人中心</a></li>
-                    <li><a href="/">个人中心</a></li>
-                    <li><a href="/">个人中心</a></li>
                     <li><a href="/logout">退出</a></li>
                 </ul>
             </div>
-
             <?php }?>
 		</div>
 	</nav>
