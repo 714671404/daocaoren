@@ -12,6 +12,11 @@ class User extends Model
     protected $table = 'users';
 
     /*
+     * 存放查询结果
+     */
+    protected $data = [];
+
+    /*
      * 添加用户
      */
     public function add_user(array $array)
@@ -44,6 +49,24 @@ class User extends Model
     public function where($sql)
     {
         $i = 0;
-        $data = [];
+        foreach ($this->db->query($sql) as $val) {
+            foreach ($val as $k => $v) {
+                $this->data[] = [$k => $v];
+            }
+        }
+        return $this;
+    }
+    public function first()
+    {
+        if ($this->data) {
+            foreach ($this->data as $val) {
+                return $val;
+            }
+        }
+        return [];
+    }
+    public function all()
+    {
+        return $this->data;
     }
 }

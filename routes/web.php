@@ -18,6 +18,10 @@ Route::post('test', 'auth\RegisterController@test');
 Route::get('/user', function() {
     $username = $_GET['username'];
     $user = new \app\http\models\User();
-    return [
-    ];
+    $sql = sprintf('select username from users where username=\'%s\'', $username);
+    $result = $user->where($sql)->first();
+    return json_encode([
+        'data' => isset($result) ? true : false,
+        'status' => 200
+    ]);
 });

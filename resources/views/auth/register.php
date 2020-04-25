@@ -55,8 +55,14 @@
                         data: {
                             username: this.value
                         },
-                        success: function(data) {
-                            console.log(data);
+                        success: function(result) {
+							console.log(result);
+                        	var result = JSON.parse(result);
+                        	console.log(result);
+                        	if (result.data) {
+								error_message[index].style.display = 'inline';
+								error_message[index].innerHTML = '会员账号已经存在';
+							}
                         }
                     });
                 }
