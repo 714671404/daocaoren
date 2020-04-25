@@ -20,7 +20,7 @@
             <a href="/register" class="btn register-btn">注册</a>
             <?php } else { ?>
             <div class="user">
-                <img src="/images/avatar/default.jpg">
+                <div class="avatar"><img src="/images/avatar/default.jpg"></div>
                 <ul class="nav">
                     <li><a href="/">个人中心</a></li>
                     <li><a href="/logout">退出</a></li>

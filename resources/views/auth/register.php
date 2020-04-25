@@ -56,7 +56,6 @@
                             username: this.value
                         },
                         success: function(result) {
-							console.log(result);
                         	var result = JSON.parse(result);
                         	console.log(result);
                         	if (result.data) {

@@ -46,12 +46,26 @@ class User extends Model
 		}
         return false;
     }
+
+    /*
+     * 登录
+     */
+    public function login_user($username, $password)
+    {
+        $sql = sprintf(
+            "select id, name, username from %s where username='%s' and password='%s'",
+            $this->table,
+            $username,
+            $password
+        );
+        return $this->where($sql)->first();
+    }
     public function where($sql)
     {
-        $i = 0;
-        foreach ($this->db->query($sql) as $val) {
+        foreach ($this->db->query($sql) as $key => $val) {
             foreach ($val as $k => $v) {
-                $this->data[] = [$k => $v];
+                $this->data[$key][$k] = $v;
+
             }
         }
         return $this;
