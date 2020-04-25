@@ -29,3 +29,7 @@ Route::get('/user', function() {
         'status' => 200
     ]);
 });
+
+Route::get('article', function() {
+    view('article/create');
+});
