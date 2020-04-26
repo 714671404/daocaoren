@@ -30,15 +30,10 @@ Route::get('/user', function() {
     ]);
 });
 
-Route::get('article', function() {
+Route::get('article/create', function() {
     view('article/create');
 });
 
-Route::get('upload', function() {
-    dd($_FILES['myFile']);
-});
-Route::post('upload', function() {
-    dd($_FILES['myFile']);
-});
+Route::post('uploads', 'Article\ArticleController@upload');
 
 // https://www.cnblogs.com/wjm956/p/9449147.html

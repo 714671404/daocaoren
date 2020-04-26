@@ -7,8 +7,13 @@
 </head>
 
 <body>
+<!--    <img src="/upload/1587924071.jpeg">-->
     <div style="width: 1000px; margin: 15px auto;">
         <div id="edit"></div>
+<!--        <form action="/uploads" method="post" enctype="multipart/form-data">-->
+<!--            <input type="file" name="file">-->
+<!--            <input type="submit" value="提交">-->
+<!--        </form>-->
     </div>
     <script src="/js/wangEditor-3.1.1/wangEditor.js"></script>
     <script>
@@ -101,27 +106,48 @@
         // editor.customConfig.uploadImgServer = '/upload/';  // 上传图片到服务器
 
         // 上传图片到服务器
-        editor.customConfig.uploadFileName = 'myFile'; //设置文件上传的参数名称
-        editor.customConfig.uploadImgServer = '/upload'; //设置上传文件的服务器路径
+        editor.customConfig.uploadFileName = 'file'; //设置文件上传的参数名称
+        editor.customConfig.uploadImgServer = '/uploads'; //设置上传文件的服务器路径
         editor.customConfig.uploadImgMaxSize = 3 * 1024 * 1024; // 将图片大小限制为 3M
         //自定义上传图片事件
         editor.customConfig.uploadImgHooks = {
             before : function(xhr, editor, files) {
-
+                // 图片上传之前触发
+                // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，files 是选择的图片文件
+                // 如果返回的结果是 {prevent: true, msg: 'xxxx'} 则表示用户放弃上传
+                // return {
+                //     prevent: true,
+                //     msg: '放弃上传'
+                // }
             },
             success : function(xhr, editor, result) {
-                console.log("上传成功");
+                // 图片上传并返回结果，图片插入成功之后触发
+                // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
             },
             fail : function(xhr, editor, result) {
-                console.log("上传失败,原因是"+result);
+                // 图片上传并返回结果，但图片插入错误时触发
+                // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
             },
             error : function(xhr, editor) {
-                console.log("上传出错");
+                // 图片上传出错时触发
+                // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
             },
             timeout : function(xhr, editor) {
-                console.log("上传超时");
+                // 图片上传超时时触发
+                // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
+            },
+            // 如果服务器端返回的不是 {errno:0, data: [...]} 这种格式，可使用该配置
+            // （但是，服务器端返回的必须是一个 JSON 格式字符串！！！否则会报错）
+            customInsert: function (insertImg, result, editor) {
+                // 图片上传并返回结果，自定义插入图片的事件（而不是编辑器自动插入图片！！！）
+                // insertImg 是插入图片的函数，editor 是编辑器对象，result 是服务器端返回的结果
+                // 举例：假如上传图片成功后，服务器端返回的是 {url:'....'} 这种格式，即可这样插入图片：
+
+                var url = result.url;
+                insertImg(url)
+                // result 必须是一个 JSON 格式字符串！！！否则报错
             }
-        }
+        };
 
         // 隐藏“网络图片”tab
         // editor.customConfig.showLinkImg = false;
