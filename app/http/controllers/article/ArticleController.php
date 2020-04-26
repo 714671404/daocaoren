@@ -40,6 +40,7 @@ class ArticleController extends Controller
                 if(in_array($typeArr[1], $imgType)){ // 图片格式是数组中的一个
                     // 类型检查无误，保存到文件夹内
                     // 给图片定一个新名字 (使用时间戳，防止重复)
+                    // date("Y-m-d", time())以当天时间错查询是否存在这个文件，存在放到文件内，不存在则创建
                     $imgname = "/upload/".time().".".$typeArr[1];
                     // 将上传的文件写入到文件夹中
                     // 参数1: 图片在服务器缓存的地址

@@ -14,7 +14,9 @@ Route::get('register', 'auth\RegisterController@show');
 Route::post('register', 'auth\RegisterController@register');
 Route::get('logout', 'auth\RegisterController@logout');
 
-Route::get('test', 'auth\RegisterController@test');
+Route::get('test', function() {
+    dd(date("Y-m-d", time()));
+});
 Route::post('test', 'auth\RegisterController@test');
 
 // 验证账号是否存在
@@ -33,6 +35,7 @@ Route::get('/user', function() {
 Route::get('article/create', function() {
     view('article/create');
 });
+
 
 Route::post('uploads', 'Article\ArticleController@upload');
 
