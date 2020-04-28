@@ -50,19 +50,16 @@ class RegisterController extends Controller
             echo '<script>alert(\'注册信息格式不正确!\');</script>';
             return $this->view('auth/register');
         }
-
-	    /*
-	     $user = new User();
-
-		if (!$this->validator($data)) {
-            $result = $user->add_user($data);
-            return response([
-                'data' => $result,
-                'status' => 200
-            ]);
-        }
-	     * */
 	}
+
+	/*
+	 * 退出
+	 */
+	public function logout()
+    {
+        session_destroy();
+        return $this->redirect('/');
+    }
 	
 	/*
 	 * 调用验证函数

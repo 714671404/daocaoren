@@ -14,11 +14,11 @@
 				<h3 class="title">登录</h3>
 				<form action="/login" method="post">
 					<div class="input-layouts">
-						<input type="text" name="user" placeholder="请输入会员账号">
+						<input type="text" name="username" placeholder="请输入会员账号">
 						<i class="iconfont icon-yonghu"></i>
 					</div>
 					<div class="input-layouts">            
-						<input type="password" name="pass" placeholder="请输入密码">
+						<input type="password" name="password" placeholder="请输入密码">
 						<i class="iconfont icon-suo"></i>
 					</div>
 					<button class="btn blue-btn">注册</button>
