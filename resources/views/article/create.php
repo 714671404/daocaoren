@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <title>添加文章</title>
     <link href="/images/favicon.ico" rel="icon" type="image/ico">
+	<link href="/css/app.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-<!--    <img src="/upload/1587924071.jpeg">-->
-    <div style="width: 1000px; margin: 15px auto;">
-        <div id="edit"></div>
-<!--        <form action="/uploads" method="post" enctype="multipart/form-data">-->
-<!--            <input type="file" name="file">-->
-<!--            <input type="submit" value="提交">-->
-<!--        </form>-->
-    </div>
+	<?php include VIEW_PATH . '/layouts/header.php'?>
+		<div style="width: 1000px; margin: 15px auto;">
+			<div id="edit"></div>
+		</div>
+	<?php include VIEW_PATH . '/layouts/footer.php'?>
+
+	<script src="/js/app.js" type="text/javascript"></script>
     <script src="/js/wangEditor-3.1.1/wangEditor.js"></script>
     <script>
         var E = window.wangEditor;
