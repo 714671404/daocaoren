@@ -303,6 +303,22 @@ body {
 	color: #FF0913;
 	display: none;
 }
+
+/* 文章样式 */
+.article-form {}
+.article-form>form>.form-group {
+	margin: 10px 0;
+	background: #fff;
+	border-radius: 5px;
+}
+.article-form>form>.form-group>input, .article-form>form>.form-group>button {
+	width: 100%;
+	padding: 10px;
+}
+.article-form>form>.form-group>input {
+	border: 1px solid #f0f0f0;
+}
+
 /* 底部 */
 .footer {
 	background: #414141;

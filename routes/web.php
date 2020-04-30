@@ -32,11 +32,9 @@ Route::get('/user', function() {
     ]);
 });
 
-Route::get('article/create', function() {
-    view('article/create');
-});
 
-
+Route::get('article/create', 'article\ArticleController@create');
+Route::post('article/store', 'article\ArticleController@store');
 Route::post('uploads', 'Article\ArticleController@upload');
 
 // https://www.cnblogs.com/wjm956/p/9449147.html
