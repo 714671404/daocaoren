@@ -1,64 +1,46 @@
 <?php
-
 namespace snoweddy\src\db;
 
 use PDO;
-use PDOException;
 
-class DB
+class DB extends PDO
 {
     /*
-     * 初始化默认属性
+     * 初始化属性
      */
-    protected static $_instance = null;
+    public static $_instance = null;
     protected $dbh;
-    protected $dsn;
+    protected $dns;
 
-    private function __construct()
+    public function __construct()
     {
         $dbConfig = config('config.db');
-        $this->dsn = sprintf(
-            '%s:host=%s;dbname=%s;charset=utf8;',
+        $this->dns = sprintf(
+            '%s:host=%s;dbname=%s;charset=%s;port=%s;',
             $dbConfig['connection'],
             $dbConfig['host'],
             $dbConfig['dbname'],
+            $dbConfig['charset'],
+            $dbConfig['port']
         );
         $options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
-        return $this->dbh = new PDO($this->dsn, $dbConfig['user'], $dbConfig['pass'], $options);
+        parent::__construct($this->dns, $dbConfig['user'], $dbConfig['pass'], $options);
     }
 
     /*
-     * 单例入口
-     */
-    public static function init()
-    {
-        if (self::$_instance === null) {
-            self::$_instance = new self();
-        }
-        return self::$_instance;
-    }
-
-    /*
-     * 执行一条sql返回影响函数
+     * 执行一条sql语句，返回受影响行数
      */
     public function exec($sql)
     {
-		if ($this->dbh->exec($sql)) {
-			return $this->dbh->lastInsertId();	
-		}
-        return false;
+        return parent::exec($sql);
     }
-
     /*
-     * 执行一条sql返回结果集
+     * 执行一条sql语句，以PDOStatement 对象范湖结果集
      */
     public function query($sql)
     {
-        return $this->dbh->query($sql);
+        $data = [];
+        foreach (parent::query($sql) as $key => $val) $data[$key] = $val;
+        return $data;
     }
-
-    /*
-     * 禁止克隆
-     */
-    private function __clone() {}
 }
