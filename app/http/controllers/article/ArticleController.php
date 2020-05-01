@@ -10,6 +10,7 @@ class ArticleController extends Controller
 	{
 
 	}
+	
     public function create()
     {
         $this->view('article/create');
