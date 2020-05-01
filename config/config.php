@@ -1,6 +1,6 @@
 <?php
 
-//define('VIEW_PATH', APP_PATH . '/resources/views');
+define('VIEW_PATH', APP_PATH . '/resources/views');
 
 return [
     'default_controller' => 'Index',
