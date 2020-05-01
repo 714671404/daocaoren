@@ -1,6 +1,6 @@
 <?php
 
-define('VIEW_PATH', APP_PATH . '/resources/views');
+//define('VIEW_PATH', APP_PATH . '/resources/views');
 
 return [
     'default_controller' => 'Index',
@@ -12,6 +12,7 @@ return [
         'host' => '127.0.0.1',
         'user' => 'root',
         'pass' => 'yuefei12',
+        'charset' => 'utf8',
         'port' => 3306,
     ]
 ];

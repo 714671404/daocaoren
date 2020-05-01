@@ -6,7 +6,7 @@ use snoweddy\src\base\Controller;
 use app\http\models\User;
 use app\common\Validator;
 
-class RegisterController extends Controller
+class Register extends Controller
 {
 	
 	/*

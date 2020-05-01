@@ -4,7 +4,7 @@ namespace app\http\controllers\article;
 
 use snoweddy\src\base\Controller;
 
-class ArticleController extends Controller
+class Article extends Controller
 {
 	public function show()
 	{
