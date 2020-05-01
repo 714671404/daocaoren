@@ -1,5 +1,4 @@
 <?php
-
 namespace app\http\controllers;
 
 use snoweddy\src\base\Controller;

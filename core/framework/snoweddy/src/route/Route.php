@@ -1,5 +1,4 @@
 <?php
-
 namespace snoweddy\src\route;
 
 class Route

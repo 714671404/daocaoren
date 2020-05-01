@@ -1,5 +1,4 @@
 <?php
-
 namespace snoweddy\src\db;
 
 use PDO;

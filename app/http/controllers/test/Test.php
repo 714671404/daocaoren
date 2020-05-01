@@ -2,21 +2,18 @@
 namespace app\http\controllers\test;
 
 use snoweddy\src\base\Controller;
-use snoweddy\src\db\DB;
+use app\http\models\Test as TestModel;
 
 class Test extends Controller
 {
-    protected $db;
+    protected $test;
     public function __construct()
     {
-        $this->db = new DB();
+        $this->test = new TestModel();
     }
     public function index()
     {
-        $sql = sprintf(
-            'select * from users where id=%s',
-            '16'
-        );
-        return json_encode($this->db->query($sql));
+        $sql = 'select * from users where 1';
+        return response($this->test->se($sql));
     }
 }

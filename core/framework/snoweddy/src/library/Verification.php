@@ -1,5 +1,4 @@
 <?php
-
 namespace snoweddy\src\library;
 
 class Verification

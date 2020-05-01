@@ -1,5 +1,4 @@
 <?php
-
 namespace snoweddy\src;
 
 use snoweddy\src\base\Env;

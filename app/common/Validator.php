@@ -1,5 +1,4 @@
 <?php
-
 namespace app\common;
 
 use snoweddy\src\library\Verification;

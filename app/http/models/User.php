@@ -1,5 +1,4 @@
 <?php
-
 namespace app\http\models;
 
 use snoweddy\src\base\Model;
