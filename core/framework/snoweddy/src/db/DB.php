@@ -43,19 +43,19 @@ class DB extends PDO
     /*
      * 执行一条sql语句，以PDOStatement 对象范湖结果集
      */
-    public function query($sql)
-    {
-        $data = [];
-        $result = parent::query($sql);
-        if ($result) {
-            foreach ($result as $key => $val)
-                $data[$key] = $val;
-
-            return $data;
-        } else {
-            return [false];
-        }
-    }
+//    public function query($sql)
+//    {
+//        $data = [];
+//        $result = parent::query($sql);
+//        if ($result) {
+//            foreach ($result as $key => $val)
+//                $data[$key] = $val;
+//
+//            return $data;
+//        } else {
+//            return [false];
+//        }
+//    }
 
     /*
      * 准备要执行的语句，并返回语句对象

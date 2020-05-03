@@ -18,24 +18,24 @@ class User extends Model
     /*
      * 添加用户
      */
-    public function add_user(array $array)
+    public function add_user(array $data)
     {
         $sql = sprintf(
             "insert into `%s` (name, username, password) values ('%s', '%s', '%s')",
             $this->table,
-            $array['name'],
-            $array['username'],
-            $array['password']
+            $data['name'],
+            $data['username'],
+            $data['password']
         );
-		$result = $this->db->exec($sql);
+		$result = $this->exec($sql);
 		// 获取id与username加入查询条件
 		if ($result) {
 			$sql = sprintf(
 				"select id, name, username from %s where id='%s'",
 				$this->table,
-				$result
+				$this->lastInsertId()
 			);
-			foreach ($this->db->query($sql) as $row) {
+			foreach ($this->query($sql) as $row) {
 				return [
 					'id' => $row['id'],
 					'name' => $row['name'],
@@ -61,7 +61,7 @@ class User extends Model
     }
     public function where($sql)
     {
-        foreach ($this->db->query($sql) as $key => $val) {
+        foreach ($this->query($sql) as $key => $val) {
             foreach ($val as $k => $v) {
                 $this->data[$key][$k] = $v;
 

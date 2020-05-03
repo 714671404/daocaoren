@@ -7,7 +7,16 @@ use app\common\Validator;
 
 class Register extends Controller
 {
-	
+    /*
+     * 初始化属性
+     */
+    protected $user;
+
+    public function __construct()
+    {
+        $this->user = new User();
+        parent::__construct();
+    }
 	/*
 	 * 展示注册页面
 	 */
@@ -23,7 +32,6 @@ class Register extends Controller
 			'username' => 'snoweddy',
 			'password' => 'yuefei12'
 		]);
-		dd($a);
 	}
 	
 	/*
@@ -39,8 +47,7 @@ class Register extends Controller
         ];
         $result = $this->validator($data);
         if ($result) {
-            $user = new User();
-            $result = $user->add_user($data);
+            $result = $this->user->add_user($data);
             // 封装session后继续完成登录功能
             $_SESSION['name'] = $result['name'];
             $_SESSION['username'] = $result['username'];

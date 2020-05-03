@@ -15,10 +15,8 @@ class Model extends DB
 
     public function __construct()
     {
-        if ($this->table) {
-            $this->model = substr(strrchr(get_class($this), '\\'), 1);
-            $this->table = strtolower($this->model) . 's';
-        }
+        $this->model = $this->model ?? substr(strrchr(get_class($this), '\\'), 1);
+        $this->table = $this->table ?? strtolower($this->model) . 's';
         parent::__construct();
     }
 }

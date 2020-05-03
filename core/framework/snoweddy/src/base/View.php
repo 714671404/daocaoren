@@ -1,7 +1,6 @@
 <?php
 namespace snoweddy\src\base;
 
-
 class View
 {
     protected $variable = [];

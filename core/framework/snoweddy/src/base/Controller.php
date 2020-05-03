@@ -22,6 +22,10 @@ class Controller
     {
         return $this->_view->view($path, $data);
     }
+
+    /*
+     * 转跳
+     */
     protected function redirect($uri)
     {
         return $this->_view->redirect($uri);

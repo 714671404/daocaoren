@@ -142,7 +142,7 @@ body {
 	vertical-align: middle;
 }
 .auth>.user>.avatar {
-	height: 100%;
+	height: 105%;
 }
 .auth>.user>.avatar>img {
 	display: inline-block;

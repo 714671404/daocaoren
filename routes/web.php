@@ -10,7 +10,7 @@ Route::get('article/{id}', 'article\Article@show');
 Route::get('login', 'auth\Login@show');
 Route::post('login', 'auth\Login@login');
 Route::get('register', 'auth\Register@show');
-Route::post('rgetegister', 'auth\Register@register');
+Route::post('register', 'auth\Register@register');
 Route::get('logout', 'auth\Register@logout');
 
 Route::get('test', function() {
