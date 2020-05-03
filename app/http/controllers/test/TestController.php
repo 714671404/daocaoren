@@ -4,7 +4,7 @@ namespace app\http\controllers\test;
 use snoweddy\src\base\Controller;
 use app\http\models\Test as TestModel;
 
-class Test extends Controller
+class TestController extends Controller
 {
     protected $test;
     public function __construct()

@@ -2,9 +2,20 @@
 namespace app\http\controllers\article;
 
 use snoweddy\src\base\Controller;
+use app\http\models\Article;
 
-class Article extends Controller
+class ArticleController extends Controller
 {
+    /*
+     * 初始化属性
+     */
+    protected $article;
+
+    public function __construct()
+    {
+        $this->article = new Article();
+        parent::__construct();
+    }
 	public function show()
 	{
 

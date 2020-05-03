@@ -5,7 +5,7 @@ use snoweddy\src\base\Controller;
 use app\http\models\User;
 use app\common\Validator;
 
-class Register extends Controller
+class RegisterController extends Controller
 {
     /*
      * 初始化属性

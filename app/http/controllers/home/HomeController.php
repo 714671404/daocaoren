@@ -3,7 +3,7 @@ namespace app\http\controllers\home;
 
 use snoweddy\src\base\Controller;
 
-class Home extends Controller
+class HomeController extends Controller
 {
     public function index()
     {

@@ -3,20 +3,20 @@ namespace snoweddy\src\route;
 
 
 
-Route::get('/', 'home\Home@index');
+Route::get('/', 'home\HomeController@index');
 
-Route::get('article/{id}', 'article\Article@show');
+Route::get('article/{id}', 'article\ArticleController@show');
 
-Route::get('login', 'auth\Login@show');
-Route::post('login', 'auth\Login@login');
-Route::get('register', 'auth\Register@show');
-Route::post('register', 'auth\Register@register');
-Route::get('logout', 'auth\Register@logout');
+Route::get('login', 'auth\LoginController@show');
+Route::post('login', 'auth\LoginController@login');
+Route::get('register', 'auth\RegisterController@show');
+Route::post('register', 'auth\RegisterController@register');
+Route::get('logout', 'auth\RegisterController@logout');
 
 Route::get('test', function() {
     dd(date("Y-m-d", time()));
 });
-Route::post('test', 'auth\Register@test');
+Route::post('test', 'auth\RegisterController@test');
 
 // 验证账号是否存在
 Route::get('/user', function() {
@@ -32,10 +32,10 @@ Route::get('/user', function() {
 });
 
 
-Route::get('article/create', 'article\Article@create');
-Route::post('article/store', 'article\Article@store');
-Route::post('uploads', 'Article\Article@upload');
+Route::get('article/create', 'article\ArticleController@create');
+Route::post('article/store', 'article\ArticleController@store');
+Route::post('uploads', 'Article\ArticleController@upload');
 
-Route::get('test', 'test\Test@index');
+Route::get('test', 'test\TestController@index');
 
 // https://www.cnblogs.com/wjm956/p/9449147.html

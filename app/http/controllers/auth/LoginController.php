@@ -4,7 +4,7 @@ namespace app\http\controllers\auth;
 use snoweddy\src\base\Controller;
 use app\http\models\User;
 
-class Login extends Controller
+class LoginController extends Controller
 {
 	public function show()
 	{
