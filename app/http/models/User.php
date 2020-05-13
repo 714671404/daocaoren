@@ -52,7 +52,7 @@ class User extends Model
     public function login_user($username, $password)
     {
         $sql = sprintf(
-            "select id, name, username from %s where username='%s' and password='%s'",
+            "select id, name, username, avatar from %s where username='%s' and password='%s'",
             $this->table,
             $username,
             $password

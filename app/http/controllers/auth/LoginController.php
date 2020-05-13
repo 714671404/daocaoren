@@ -19,6 +19,7 @@ class LoginController extends Controller
 	        $_SESSION['id'] = $result['id'];
             $_SESSION['name'] = $result['name'];
             $_SESSION['username'] = $result['username'];
+            $_SESSION['avatar'] = $result['avatar'];
             return $this->redirect('/');
         }
     }

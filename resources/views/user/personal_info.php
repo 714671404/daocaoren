@@ -11,7 +11,18 @@
         <?php include __DIR__ . '/../layouts/header.php'?>
 
         <section class="container">
-
+			<div class="main box">
+				<div class="top">
+					<a href="/user/<?php echo $_SESSION['id']?>" class="avatar">
+						<img src="/upload/avatar/<?php echo $_SESSION['avatar']?>">
+					</a>
+					<div class="title"></div>
+					<div class="info"></div>
+				</div>
+			</div>
+			<aside class="sidebar box">
+				<h3>暂未设计</h3>
+			</aside>
         </section>
 
         <?php include __DIR__ . '/../layouts/footer.php'?>

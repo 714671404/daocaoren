@@ -148,7 +148,6 @@ body {
 	display: inline-block;
 	width: 40px;
 	height: 40px;
-	border-radius: 50%;
 	margin-top: 5px;
 }
 .auth>.user:hover .nav {
@@ -158,7 +157,7 @@ body {
 	width: auto;
 	position: absolute;
 	white-space: nowrap;
-	top: 53px;
+	top: 54px;
 	right: -21px;
 	display: none;
 	border: 1px solid #f5f5f5;
@@ -193,11 +192,7 @@ body {
 }
 .main {
 	float: left;
-	
-	/*
-	sidebar开启式启用即可
 	width: 67%;
-	*/
 }
 .main-list {
 	margin: 15px 25px;
@@ -242,7 +237,6 @@ body {
 .sidebar {
 	float: right;
 	width: 30%;
-	height: 300px;
 }
 
 /* auth */
@@ -302,6 +296,21 @@ body {
 	right: 10px;
 	color: #FF0913;
 	display: none;
+}
+
+/* 个人信息 */
+.main>.top {
+	margin-bottom: 15px;
+}
+.main>.top>.avatar {
+	float: left;
+	width: 80px;
+	height: 80px;
+}
+.avatar>img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
 }
 
 /* 文章样式 */

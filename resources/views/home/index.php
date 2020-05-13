@@ -44,9 +44,9 @@
 					
 				</ul>
 			</div>	
-			<!--
-			<aside class="sidebar box"></aside>
-			-->
+			<aside class="sidebar box">
+				<h3>暂未设计</h3>
+			</aside>
 		</section>
 		
 		<?php include __DIR__ . '/../layouts/footer.php'?>
