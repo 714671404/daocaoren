@@ -31,7 +31,14 @@ Route::get('/user', function() {
     ]);
 });
 
+/*
+ * 用户
+ */
+Route::get('user/{id}', 'user\UserController@index');
 
+/*
+ * 文章
+ */
 Route::get('article/create', 'article\ArticleController@create');
 Route::post('article/store', 'article\ArticleController@store');
 Route::post('uploads', 'Article\ArticleController@upload');

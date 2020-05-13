@@ -16,6 +16,7 @@ class LoginController extends Controller
 	    $user = new User();
 	    $result = $user->login_user($_POST['username'], $_POST['password']);
 	    if (count($result) !== 0) {
+	        $_SESSION['id'] = $result['id'];
             $_SESSION['name'] = $result['name'];
             $_SESSION['username'] = $result['username'];
             return $this->redirect('/');

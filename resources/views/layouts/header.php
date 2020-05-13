@@ -22,7 +22,7 @@
             <div class="user">
                 <div class="avatar"><img src="/images/avatar/default.jpg"></div>
                 <ul class="nav">
-                    <li><a href="/">个人中心</a></li>
+                    <li><a href="/user/<?php echo $_SESSION['id']?>">个人中心</a></li>
                     <li><a href="/logout">退出</a></li>
                 </ul>
             </div>
