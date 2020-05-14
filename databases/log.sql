@@ -18,7 +18,6 @@ CREATE TABLE users(
 CREATE TABLE articles(
 	`id` int primary key auto_increment,
 	`user_id` int,
-	`name`	varchar(255),
 	`title` varchar(255),
 	`content` text,
 	`created_at` datetime DEFAULT NOW() COMMENT '文章创建时间',

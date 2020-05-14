@@ -14,9 +14,9 @@ Route::post('register', 'auth\RegisterController@register');
 Route::get('logout', 'auth\RegisterController@logout');
 
 Route::get('test', function() {
-    dd(date("Y-m-d", time()));
+    return 11;
 });
-Route::post('test', 'auth\RegisterController@test');
+Route::post('test', 'auth\RegisterController@index');
 
 // 验证账号是否存在
 Route::get('/user', function() {

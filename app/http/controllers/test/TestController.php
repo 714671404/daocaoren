@@ -14,6 +14,6 @@ class TestController extends Controller
     public function index()
     {
         $sql = 'select * from users where 1';
-        return response($this->test->se($sql));
+        return 1;
     }
 }
