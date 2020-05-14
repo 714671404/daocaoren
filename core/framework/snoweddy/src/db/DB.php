@@ -12,21 +12,52 @@ class DB extends PDO
     public static $_instance = null;
     protected $dbh;
     protected $dns;
+    private $dbConfig = [];
+    private $options;
 
     public function __construct()
     {
+        $this->dbConfig =  config('config.db');
+        $this->options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
+        if ($this->dbCnfig['connection'] === 'mysql') {
+            $this->connMysql();
+        } else if ($this->dbConfig['connection'] === 'sqlite') {
+            $this->connSqlite();
+        }
+    }
+
+    /*
+     * 连接mysql
+     */
+    private function connMysql()
+    {
         try {
-            $dbConfig = config('config.db');
             $this->dns = sprintf(
                 '%s:host=%s;dbname=%s;charset=%s;port=%s;',
-                $dbConfig['connection'],
-                $dbConfig['host'],
-                $dbConfig['dbname'],
-                $dbConfig['charset'],
-                $dbConfig['port']
+                $this->dbConfig['connection'],
+                $this->dbConfig['host'],
+                $this->dbConfig['dbname'],
+                $this->dbConfig['charset'],
+                $this->dbConfig['port']
             );
-            $options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
-            parent::__construct($this->dns, $dbConfig['user'], $dbConfig['pass'], $options);
+            parent::__construct($this->dns, $this->dbConfig['user'], $this->dbConfig['pass'], $this->options);
+        } catch (PDOException $e) {
+            die("<h3>Database connection failed: <span  style='color: red;'>" . $e->getMessage() . "</span></h3>");
+        }
+    }
+
+    /*
+     * 李连杰sqlite
+     */
+    private function connSqlite()
+    {
+        try {
+            $this->dns = sprintf(
+                '%s:%s',
+                $this->dbConfig['connection'],
+                APP_PATH . '/databases/' . $this->dbConfig['app_name']
+            );
+            parent::__construct('');
         } catch (PDOException $e) {
             die("<h3>Database connection failed: <span  style='color: red;'>" . $e->getMessage() . "</span></h3>");
         }

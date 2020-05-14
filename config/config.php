@@ -1,11 +1,12 @@
 <?php
 
 return [
+    'app_name' => 'daocaoren',
     'default_controller' => 'Index',
     'default_action' => 'index',
     'debug' => true,
     'db' => [
-        'connection' => 'mysql',
+        'connection' => 'sqlite',
         'dbname' => 'daocaoren',
         'host' => '127.0.0.1',
         'user' => 'root',
