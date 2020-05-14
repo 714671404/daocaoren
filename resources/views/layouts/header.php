@@ -23,6 +23,7 @@
                 <div class="avatar"><img src="/upload/avatar/<?php echo $_SESSION['avatar']?>"></div>
                 <ul class="nav">
                     <li><a href="/user/<?php echo $_SESSION['id']?>">个人中心</a></li>
+                    <li><a href="/article/create">创建文章</a></li>
                     <li><a href="/logout">退出</a></li>
                 </ul>
             </div>
