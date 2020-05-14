@@ -12,14 +12,14 @@ class DB extends PDO
     public static $_instance = null;
     protected $dbh;
     protected $dns;
-    private $dbConfig = [];
-    private $options;
+    protected $dbConfig = [];
+    protected $options;
 
     public function __construct()
     {
         $this->dbConfig =  config('config.db');
         $this->options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
-        if ($this->dbCnfig['connection'] === 'mysql') {
+        if ($this->dbConfig['connection'] === 'mysql') {
             $this->connMysql();
         } else if ($this->dbConfig['connection'] === 'sqlite') {
             $this->connSqlite();
@@ -55,9 +55,9 @@ class DB extends PDO
             $this->dns = sprintf(
                 '%s:%s',
                 $this->dbConfig['connection'],
-                APP_PATH . '/databases/' . $this->dbConfig['app_name']
+                APP_PATH . '/databases/' . $this->dbConfig['dbname'] . '.db'
             );
-            parent::__construct('');
+            parent::__construct($this->dns);
         } catch (PDOException $e) {
             die("<h3>Database connection failed: <span  style='color: red;'>" . $e->getMessage() . "</span></h3>");
         }

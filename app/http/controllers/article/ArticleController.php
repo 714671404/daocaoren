@@ -23,6 +23,15 @@ class ArticleController extends Controller
 	
     public function create()
     {
+        $sql = sprintf(
+            'SELECT * FROM users'
+        );
+        $res = $this->article->query($sql);
+        foreach ($res as $val) {
+            print_r($val);
+            echo '<br>';
+        }
+        exit;
         $this->view('article/create');
     }
 
