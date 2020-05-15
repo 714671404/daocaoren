@@ -170,6 +170,8 @@ class Route
         } elseif ($method === 'post') {
             // post都是没有参数路由
             self::$route[$method][$rule] = $route;
+        } else {
+            die('路由当中不存在' . $method . '方法');
         }
 
 

@@ -4,6 +4,7 @@ namespace app\http\controllers\test;
 use app\http\models\User;
 use snoweddy\src\base\Controller;
 use app\http\models\Test as TestModel;
+use snoweddy\src\library\Upload;
 
 class TestController extends Controller
 {
@@ -11,6 +12,7 @@ class TestController extends Controller
     public function __construct()
     {
         $this->test = new TestModel();
+        parent::__construct();
     }
     public function index()
     {
@@ -18,6 +20,7 @@ class TestController extends Controller
     }
     public function upload()
     {
-        $this->upload_image($_FILES['file']);
+        $result = Upload::upload_image($_FILES['file'], '/upload');
+        $this->view('test/index', $result);
     }
 }

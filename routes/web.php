@@ -3,16 +3,14 @@ namespace snoweddy\src\route;
 
 Route::get('/', 'home\HomeController@index');
 
-Route::get('article/{id}', 'article\ArticleController@show');
-
+/*
+ * auth
+ */
 Route::get('login', 'auth\LoginController@show');
 Route::post('login', 'auth\LoginController@login');
 Route::get('register', 'auth\RegisterController@show');
 Route::post('register', 'auth\RegisterController@register');
 Route::get('logout', 'auth\RegisterController@logout');
-
-Route::post('test', 'auth\RegisterController@index');
-
 // 验证账号是否存在
 Route::get('/user', function() {
     $username = $_GET['username'];
@@ -38,6 +36,11 @@ Route::get('article/create', 'article\ArticleController@create');
 Route::post('article/store', 'article\ArticleController@store');
 Route::post('uploads', 'Article\ArticleController@upload');
 
+
+/*
+ * 测试路由
+ */
 Route::get('test', 'test\TestController@index');
+Route::post('test', 'test\TestController@upload');
 
 // https://www.cnblogs.com/wjm956/p/9449147.html

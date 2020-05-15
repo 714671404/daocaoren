@@ -40,6 +40,7 @@ class Autoloader
             'snoweddy\\src\\route\\Route' => APP_PATH . '/core/framework/snoweddy/src/route/Route.php',
             'snoweddy\\src\\library\\Response' => APP_PATH . '/core/framework/snoweddy/src/library/Response.php',
 			'snoweddy\\src\\library\\Verification' => APP_PATH . '/core/framework/snoweddy/src/library/Verification.php',
+			'snoweddy\\src\\library\\Upload' => APP_PATH . '/core/framework/snoweddy/src/library/Upload.php',
         ];
     }
 }

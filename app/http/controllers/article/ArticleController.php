@@ -3,6 +3,7 @@ namespace app\http\controllers\article;
 
 use snoweddy\src\base\Controller;
 use app\http\models\Article;
+use snoweddy\src\library\Upload;
 
 class ArticleController extends Controller
 {
@@ -33,6 +34,6 @@ class ArticleController extends Controller
 
     public function upload()
     {
-        $this->upload_image($_FILES['file']);
+        return Upload::upload_image($_FILES['file'], '/upload');
     }
 }
