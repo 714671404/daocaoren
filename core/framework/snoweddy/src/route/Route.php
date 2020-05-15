@@ -50,7 +50,6 @@ class Route
         if ($method === 'get') {
             // 获取预定义的路由组
             $getArray = self::$route['get'];
-            dd($getArray['no_params']);
             // 判断当前路由有没有传递参数，若有参数直接找到对应参数返回
             if (array_key_exists($url, $getArray['no_params'])) {
                 $route = $getArray['no_params'][$url];

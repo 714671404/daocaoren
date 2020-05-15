@@ -51,6 +51,7 @@ class RegisterController extends Controller
             // 封装session后继续完成登录功能
             $_SESSION['name'] = $result['name'];
             $_SESSION['username'] = $result['username'];
+            $_SESSION['avatar'] = $result['avatar'];
             return $this->redirect('/');
         } else {
             echo '<script>alert(\'注册信息格式不正确!\');</script>';

@@ -18,7 +18,7 @@
             <?php if (!isset($_SESSION['username'])) {?>
             <a href="/login" class="btn login-btn">登录</a>
             <a href="/register" class="btn register-btn">注册</a>
-            <?php } else { ?>
+            <?php } else {?>
             <div class="user">
                 <div class="avatar"><img src="/upload/avatar/<?php echo $_SESSION['avatar']?>"></div>
                 <ul class="nav">

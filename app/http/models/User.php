@@ -31,7 +31,7 @@ class User extends Model
 		// 获取id与username加入查询条件
 		if ($result) {
 			$sql = sprintf(
-				"select id, name, username from %s where id='%s'",
+				"select id, name, username, avatar from %s where id='%s'",
 				$this->table,
 				$this->lastInsertId()
 			);
@@ -39,7 +39,8 @@ class User extends Model
 				return [
 					'id' => $row['id'],
 					'name' => $row['name'],
-					'username' => $row['username']
+					'username' => $row['username'],
+					'avatar' => $row['avatar']
 				];
 			}
 		}

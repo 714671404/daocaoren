@@ -1,6 +1,7 @@
 <?php
 namespace app\http\controllers\test;
 
+use app\http\models\User;
 use snoweddy\src\base\Controller;
 use app\http\models\Test as TestModel;
 
@@ -13,7 +14,10 @@ class TestController extends Controller
     }
     public function index()
     {
-        $sql = 'select * from users where 1';
-        return 1;
+        $this->view('test/index');
+    }
+    public function upload()
+    {
+        $this->upload_image($_FILES['file']);
     }
 }

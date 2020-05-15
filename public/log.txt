@@ -1,0 +1,4 @@
+问题1：
+    例：Route::get('test', function() {});
+    例：Route::get('test', 'TestController@index');
+    后生命的路由会覆盖钱一个路由，访问结果是第二个路由

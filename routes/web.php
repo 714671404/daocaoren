@@ -1,8 +1,6 @@
 <?php
 namespace snoweddy\src\route;
 
-
-
 Route::get('/', 'home\HomeController@index');
 
 Route::get('article/{id}', 'article\ArticleController@show');
@@ -13,9 +11,6 @@ Route::get('register', 'auth\RegisterController@show');
 Route::post('register', 'auth\RegisterController@register');
 Route::get('logout', 'auth\RegisterController@logout');
 
-Route::get('test', function() {
-    return 11;
-});
 Route::post('test', 'auth\RegisterController@index');
 
 // 验证账号是否存在
