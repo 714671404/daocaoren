@@ -9,8 +9,17 @@ class Article extends Model
     {
 
     }
-    public function add_article($data)
+    public function add($data)
     {
-        dd($data);
+        $sql = sprintf(
+            "INSERT INTO %s(user_id, title, text) VALUES('%s', '%s', '%s')",
+            $this->table,
+            $data['u_id'],
+            $data['title'],
+            $data['text']
+        );
+        if ($this->exec($sql)) {
+            return $this->lastInsertId();
+        }
     }
 }

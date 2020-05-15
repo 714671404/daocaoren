@@ -10,7 +10,11 @@
 	<div id="app">
 		<?php include __DIR__ . "/../layouts/header.php"?>
 		<section class="container">
-			文章内容(正在开发中~~~~)
+			<div style="width: 100%">
+				<h3><?php echo $data['title']?></h3>
+				<div><?php echo $data['text']?></div>
+				<div><?php echo $data['created_at']?></div>
+			</div>
 		</section>
 		<?php include __DIR__ . "/../layouts/footer.php"?>
 	</div>

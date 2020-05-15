@@ -7,7 +7,7 @@ class Upload
     /*
      * 图片上传
      */
-    public static function upload_image($file, $url = '/upload', $imgSize = 10485760)
+    public static function upload_image($file, $url = '/upload', $imgSize = 10 * 1024 * 1024)
     {
         /*
          * 单位：

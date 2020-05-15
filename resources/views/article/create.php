@@ -18,6 +18,7 @@
                     <div class="form-group">
                         <div id="edit"></div>
                         <input type="hidden" name="text" value="">
+                        <input type="hidden" name="u_id" value="<?php echo $_SESSION['id']?>">
                     </div>
                     <div class="form-group">
                         <button type="button" class="btn blue-btn">提交</button>
@@ -181,7 +182,7 @@
             };
 
             // 隐藏“网络图片”tab
-            // editor.customConfig.showLinkImg = false;
+            editor.customConfig.showLinkImg = false;
 
             editor.create();
         })();

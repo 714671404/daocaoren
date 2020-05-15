@@ -17,9 +17,10 @@ class ArticleController extends Controller
         $this->article = new Article();
         parent::__construct();
     }
-	public function show()
+	public function show($id)
 	{
-
+        $data = $this->article->first($id);
+        $this->view('article/show', $data);
 	}
 	
     public function create()
@@ -29,7 +30,10 @@ class ArticleController extends Controller
 
     public function store()
     {
-        dd($_POST);
+        $result = $this->article->add($_POST);
+        if ($result) {
+            $this->redirect("/article/$result");
+        }
     }
 
     public function upload()

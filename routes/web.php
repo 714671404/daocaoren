@@ -32,6 +32,7 @@ Route::get('user/{id}', 'user\UserController@index');
 /*
  * 文章
  */
+Route::get('article/{id}', 'article\ArticleController@show');
 Route::get('article/create', 'article\ArticleController@create');
 Route::post('article/store', 'article\ArticleController@store');
 Route::post('uploads', 'Article\ArticleController@upload');
