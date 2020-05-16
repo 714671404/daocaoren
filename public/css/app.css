@@ -370,7 +370,7 @@ body {
 }
 .article-content>.text {}
 .content-actions {
-	margin: 15px 20px 32px 20px;
+	margin: 15px 20px 32px;
 	padding: 0 8px;
 }
 .content-actions>.btn {
