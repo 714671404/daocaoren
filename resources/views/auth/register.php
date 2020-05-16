@@ -28,7 +28,7 @@
 						<i class="iconfont icon--"></i>
                         <span class="error">123</span>
 					</div>
-					<button type="button" class="btn blue-btn">注册</button>
+					<button class="btn blue-btn">注册</button>
 				</form>
 			</div>
 		</section>
@@ -81,13 +81,12 @@
 
             if ((name.length === 0) || (username.length === 0) || (pass.length === 0)) {
                 alert('注册信息不能为空!');
-                return;
+                return false;
             }
             for (var i = 0; i < error_message.length; i ++) {
                 if (error_message[i].style.display === 'inline') {
-                    alert(error_message[i].style.display);
                     alert('请核对注册系信息格式知否正确!');
-                    return;
+                    return false;
                 }
             }
             form.submit();
