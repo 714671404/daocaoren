@@ -20,11 +20,25 @@ $db->exec($sql);
 $sql = <<<EOF
 CREATE TABLE articles(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    user_id integer,
+    user_id INTEGER,
     title VARCHAR(255),
     text TEXT,
+	comment INTEGER,
+	collect INTEGER,
+	awesome INTEGER,
     created_at datetime TIMESTAMP default (datetime('now', 'localtime')),
     updated_at datetime TIMESTAMP default (datetime('now', 'localtime'))
 );
 EOF;
 $db->exec($sql);
+
+// user与article字典表
+$sql = <<<EOF
+CREATE TABLE user_article(
+	u_id INTEGER,
+	a_id INTEGER
+);
+EOF;
+$db->exec($sql);
+
+// https://blog.csdn.net/lm1622/article/details/77950133
