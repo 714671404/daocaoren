@@ -19,22 +19,4 @@ class Model extends DB
         $this->table = $this->table ?? strtolower($this->model) . 's';
         parent::__construct();
     }
-
-    /*
-     * 查询一条数据
-     */
-    public function first($id)
-    {
-        $sql = sprintf(
-            "SELECT * FROM %s WHERE id='%s'",
-            $this->table,
-            $id
-        );
-        $res = $this->query($sql);
-        $data = [];
-        foreach ($res as $key => $val) {
-            $data = $val;
-        }
-        return $data;
-    }
 }

@@ -19,7 +19,7 @@
 					</div>
 					<div class="input-layouts">            
 						<input type="password" name="password" placeholder="请输入密码">
-						<i class="iconfont icon-suo"></i>
+						<i class="iconfont icon--"></i>
 					</div>
 					<button class="btn blue-btn">注册</button>
 				</form>

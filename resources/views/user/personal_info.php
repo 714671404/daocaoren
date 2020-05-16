@@ -14,7 +14,7 @@
 			<div class="main box">
 				<div class="top">
 					<a href="/user/<?php echo $_SESSION['id']?>" class="avatar">
-						<img src="/upload/avatar/<?php echo $_SESSION['avatar']?>">
+						<img src="<?php echo $_SESSION['avatar']?>">
 					</a>
 					<div class="title"></div>
 					<div class="info"></div>

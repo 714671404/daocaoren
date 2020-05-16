@@ -25,7 +25,7 @@
 					</div>
 					<div class="input-layouts">
 						<input type="password" name="password" placeholder="请输入密码" data-index="3" maxlength="35">
-						<i class="iconfont icon-suo"></i>
+						<i class="iconfont icon--"></i>
                         <span class="error">123</span>
 					</div>
 					<button type="button" class="btn blue-btn">注册</button>

@@ -19,7 +19,7 @@ class ArticleController extends Controller
     }
 	public function show($id)
 	{
-        $data = $this->article->first($id);
+        $data = $this->article->select_article($id);
         $this->view('article/show', $data);
 	}
 	
@@ -30,9 +30,9 @@ class ArticleController extends Controller
 
     public function store()
     {
-        $result = $this->article->add($_POST);
-        if ($result) {
-            $this->redirect("/article/$result");
+        $data = $this->article->add($_POST);
+        if ($data) {
+            $this->redirect("/article/{$data}");
         }
     }
 

@@ -7,28 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-<form action="/test" method="post" enctype="multipart/form-data">
-    <input type="file" name="file">
-    <!--
-    <input type="file" name="file[]">
-    <input type="file" name="file[]">
-    <input type="file" name="file[]">
-    <input type="file" name="file[]">
-    -->
-    <input type="submit" value="submit">
-</form>
+<body style="height: 100vh">
 
-<?php
-
-if (isset($result)) {
-    print_r($result);
-    $url = $result['status'] === 0 ? $result['url'] : '/upload/avatar/default.jpg';
-}
-
-?>
-
-
-<img src="<?php echo $url?>">
 </body>
 </html>

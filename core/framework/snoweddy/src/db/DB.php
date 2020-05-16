@@ -47,7 +47,7 @@ class DB extends PDO
     }
 
     /*
-     * 李连杰sqlite
+     * 连接sqlite
      */
     private function connSqlite()
     {
@@ -58,43 +58,11 @@ class DB extends PDO
                 APP_PATH . '/databases/' . $this->dbConfig['dbname'] . '.db'
             );
             parent::__construct($this->dns);
+            foreach ($this->options as $key => $val) {
+                $this->setAttribute($key, $val);
+            }
         } catch (PDOException $e) {
             die("<h3>Database connection failed: <span  style='color: red;'>" . $e->getMessage() . "</span></h3>");
         }
     }
-
-    /*
-     * 执行一条sql语句，返回受影响行数
-     */
-//    public function exec($sql)
-//    {
-//        return parent::exec($sql);
-//    }
-
-    /*
-     * 执行一条sql语句，以PDOStatement 对象范湖结果集
-     */
-//    public function query($sql)
-//    {
-//        $data = [];
-//        $result = parent::query($sql);
-//        if ($result) {
-//            foreach ($result as $key => $val)
-//                $data[$key] = $val;
-//
-//            return $data;
-//        } else {
-//            return [false];
-//        }
-//    }
-
-    /*
-     * 准备要执行的语句，并返回语句对象
-     */
-//    public function prepare($sql, array $data)
-//    {
-//        $sth = parent::prepare($sql);
-//        $sth->execute($data);
-//        return $sth->fetchAll();
-//    }
 }

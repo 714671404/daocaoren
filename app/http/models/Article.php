@@ -9,6 +9,7 @@ class Article extends Model
     {
 
     }
+
     public function add($data)
     {
         $sql = sprintf(
@@ -21,5 +22,25 @@ class Article extends Model
         if ($this->exec($sql)) {
             return $this->lastInsertId();
         }
+    }
+
+    public function select_article($id)
+    {
+        $data = [];
+        $sql = sprintf(
+            "SELECT id, user_id, title, text, created_at FROM articles WHERE id=%s",
+            $id
+        );
+        foreach ($this->query($sql) as $val) {
+            $data = $val;
+        }
+        $sql = sprintf(
+            "SELECT name, avatar FROM users WHERE id=%s",
+            $data['user_id']
+        );
+        foreach ($this->query($sql) as $val) {
+            $data = array_merge($data, $val);
+        }
+        return $data;
     }
 }
