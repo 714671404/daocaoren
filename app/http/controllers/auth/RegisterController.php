@@ -25,15 +25,6 @@ class RegisterController extends Controller
 		return $this->view('auth/register');
 	}
 	
-	public function test()
-	{
-		$a = $this->validator([
-			'name' => 'xia',
-			'username' => 'snoweddy',
-			'password' => 'yuefei12'
-		]);
-	}
-	
 	/*
 	 * 注册
 	 */
@@ -41,14 +32,15 @@ class RegisterController extends Controller
 	{
 	    // 注册验证开发中
         $data = [
-            'name' => $_POST['name'],
-            'username' => $_POST['username'],
+            'name' => trim($_POST['name']),
+            'username' => trim($_POST['username']),
             'password' => $_POST['password']
         ];
         $result = $this->validator($data);
         if ($result) {
             $result = $this->user->add_user($data);
             // 封装session后继续完成登录功能
+            $_SESSION['id'] = $result['id'];
             $_SESSION['name'] = $result['name'];
             $_SESSION['username'] = $result['username'];
             $_SESSION['avatar'] = $result['avatar'];
@@ -69,7 +61,7 @@ class RegisterController extends Controller
     }
 	
 	/*
-	 * 调用验证函数
+	 * 验证函数
 	 */
 	protected function validator($data)
 	{

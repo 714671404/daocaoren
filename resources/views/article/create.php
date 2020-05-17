@@ -13,7 +13,7 @@
             <div class="article-form">
                 <form action="/article/store" method="post">
                     <div class="form-group">
-                        <input type="text" name="title" placeholder="标题">
+                        <input type="text" name="title" placeholder="标题" value="<?php echo isset($title) ? $data['title'] : ''?>">
                     </div>
                     <div class="form-group">
                         <div id="edit"></div>
@@ -21,7 +21,7 @@
                         <input type="hidden" name="u_id" value="<?php echo $_SESSION['id']?>">
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn blue-btn">提交</button>
+                        <button class="btn blue-btn">提交</button>
                     </div>
                 </form>
             </div>
@@ -80,7 +80,7 @@
             editor.customConfig.debug = true;
 
             // 关闭粘贴样式的过滤
-            //editor.customConfig.pasteFilterStyle = false;
+            // editor.customConfig.pasteFilterStyle = true;
             // 忽略粘贴内容中的图片
             //editor.customConfig.pasteIgnoreImg = true;
             // 自定义处理粘贴的文本内容
@@ -185,6 +185,7 @@
             editor.customConfig.showLinkImg = false;
 
             editor.create();
+            editor.txt.append(`<?php echo isset($text) ? $text : ''?>`);
         })();
     </script>
 </body>

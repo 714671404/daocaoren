@@ -20,7 +20,11 @@ class ArticleController extends Controller
 	public function show($id)
 	{
         $data = $this->article->select_article($id);
-        $this->view('article/show', $data);
+        if ($data) {
+            $this->view('article/show', $data);
+        } else {
+            $this->view('error/404');
+        }
 	}
 	
     public function create()
@@ -30,9 +34,17 @@ class ArticleController extends Controller
 
     public function store()
     {
-        $data = $this->article->add($_POST);
-        if ($data) {
-            $this->redirect("/article/{$data}");
+        $data = [
+            'u_id' => $_POST['u_id'],
+            'title' => $_POST['title'],
+            'text' => htmlspecialchars($_POST['text'])
+        ];
+        $result = $this->article->add($data);
+        if ($result) {
+            $this->redirect("/article/{$result}");
+        } else {
+            echo "<script>alert('发布失败');</script>";
+            return $this->view('/article/create', $_POST);
         }
     }
 

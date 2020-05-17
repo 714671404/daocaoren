@@ -28,6 +28,6 @@ class Controller
      */
     protected function redirect($uri)
     {
-        return $this->_view->redirect($uri);
+        $this->_view->redirect($uri);
     }
 }
