@@ -64,12 +64,12 @@
                                 <p>2020-5-18 09:06:08</p>
                             </div>
                             <div class="comment-message">这条评论很好好</div>
-                            <div class="comment-actions">
-                                <a href="javascript:void(0)">
-                                    <i class="iconfont icon-xiaoxikefuxinxitongzhi"></i>
-                                    <button class="btn click">回复</button>
-                                </a>
-                            </div>
+<!--                            <div class="comment-actions">-->
+<!--                                <a href="javascript:void(0)">-->
+<!--                                    <i class="iconfont icon-xiaoxikefuxinxitongzhi"></i>-->
+<!--                                    <button class="btn click">回复</button>-->
+<!--                                </a>-->
+<!--                            </div>-->
 <!--                            <ul class="comment-list-item">-->
 <!--                                <li>-->
 <!--                                    <a href="javascript:void(0)"><img src="/upload/avatar/default.jpg"></a>-->
