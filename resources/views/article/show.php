@@ -45,38 +45,68 @@
                     </span>
                 </div>
 
-
                 <!--评论区-->
                 <div class="comment-area">
                     <h3 class="title">70 评论</h3>
+
                     <!--发布评论-->
                     <div class="post-comment">
-                        <input type="text" id="comment" placeholder="写下您的评论...">
-                        <button clas="btn">发布</button>
+                        <input type="text" placeholder="发布评论">
+                        <button>发布</button>
                     </div>
-                    <!--评论展示-->
-                    <div class="comment-list">
-                        <ul>
-                            <li>
-                                <a href="/user/1"><img src="/upload/avatar/default.jpg"></a>
-                                <div class="comment-user">
-                                    <h3 class="title">夏天夏天夏天夏天夏天夏天</h3>
-                                    <span>2020-5-17 15:31:49</span>
-                                </div>
-                                <div class="comment-message">评论美容评论美容评论美容评论美容评论美容评论美容评论美容评论美容</div>
-                                <div class="comment-actions">
-                                    <button>
-                                        <i class="iconfont icon-xiaoxikefuxinxitongzhi"></i>
-                                        <span>回复</span>
-                                    </button>
-                                </div>
-                                <div class="post-comment">
-                                    <input type="text" id="comment" placeholder="写下您的评论...">
-                                    <button clas="btn">发布</button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    <!--评论列表-->
+                    <ul class="comment-list">
+                        <li>
+                            <!--发布人信息-->
+                            <a href="javascript:void(0)"><img src="/upload/avatar/default.jpg"></a>
+                            <div class="comment-user">
+                                <p>蓝色火焰</p>
+                                <p>2020-5-18 09:06:08</p>
+                            </div>
+                            <div class="comment-message">这条评论很好好</div>
+                            <div class="comment-actions">
+                                <a href="javascript:void(0)">
+                                    <i class="iconfont icon-xiaoxikefuxinxitongzhi"></i>
+                                    <button class="btn">回复</button>
+                                </a>
+                            </div>
+                            <ul class="comment-list-item">
+                                <li>
+                                    <a href="javascript:void(0)"><img src="/upload/avatar/default.jpg"></a>
+                                    <div class="comment-user">
+                                        <p>蓝色火焰</p>
+                                        <p>2020-5-18 09:16:12</p>
+                                    </div>
+                                    <div class="comment-message">这条消息很好好好好！</div>
+                                    <div class="comment-actions">
+                                        <span>
+                                            <i class="iconfont icon-xiaoxikefuxinxitongzhi"></i>
+                                            <button class="btn">回复</button>
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"><img src="/upload/avatar/default.jpg"></a>
+                                    <div class="comment-user">
+                                        <p>蓝色火焰</p>
+                                        <p>2020-5-18 09:16:12</p>
+                                    </div>
+                                    <div class="comment-message">这条消息很好好好好！</div>
+                                    <div class="comment-actions">
+                                        <span>
+                                            <i class="iconfont icon-xiaoxikefuxinxitongzhi"></i>
+                                            <button class="btn">回复</button>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--回复-->
+                            <div class="post-comment hidden">
+                                <input type="text" placeholder="发布评论">
+                                <button>发布</button>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 			</div>
             <aside class="sidebar box">开发中</aside>
