@@ -1,3 +1,15 @@
-#header {
-	background: #ccc;
+#header .navbar-nav>li.nav-item>a {
+	padding: 10px 20px;
+}
+.user-info>.btn {
+	display: inline-block;
+	padding: 0 16px;
+	font-size: 14px;
+	line-height: 32px;
+	color: #8590a6;
+	text-align: center;
+	cursor: pointer;
+	background: none;
+	border: 1px solid;
+	border-radius: 3px;
 }

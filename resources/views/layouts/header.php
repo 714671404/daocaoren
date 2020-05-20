@@ -1,6 +1,5 @@
 <header id="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
+    <nav class="row navbar navbar-expand-lg navbar-light bg-light">
             <!--.navbar-text 用于添加垂直居中的文本字符串。-->
 
             <!--.navbar-brand 为您的公司，产品或项目名称。-->
@@ -9,7 +8,9 @@
                 .navbar-toggler 用於我們的折疊插件和其他 navigation toggling 行為。
                 data-target对应隐藏模型id
             -->
-            <button class="navbar-toggler"
+			<!--.form-inline 用于任何表单控件和操作。-->
+
+			<button class="navbar-toggler"
                     data-toggle="collapse"
                     data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent"
@@ -23,15 +24,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- .navbar-nav 提供完整的高和轻便的导航（包括对下拉菜单的支持）。-->
                 <ul class="navbar-nav mr-auto">
-                    <!--
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">首页</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                    -->
+					<li class="nav-item active">
+						<a class="nav-link" href="/article">文章</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">PHP</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">CSS</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">JavaScript</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Python</a>
+					</li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle"
                            id="navbarDropdown"
@@ -48,15 +55,11 @@
                         </div>
                     </li>
                 </ul>
-
-                <!--.form-inline 用于任何表单控件和操作。-->
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="搜索" aria-label="Search">
-                    <button class="btn btn-primary my-2 my-sm-0" type="submit">搜索</button>
-                </form>
-                <a href="/login" class="btn btn-group">登录</a>
-                <a href="/register" class="btn btn-group">注册</a>
+				<!--用户信息-->
+				<div class="navbar-nav navbar-expand user-info">
+					<a class="btn">登陆</a>
+					<a class="btn ml-sm-2">注册账户</a>
+				</div>
             </div>
-        </div>
     </nav>
 </header>

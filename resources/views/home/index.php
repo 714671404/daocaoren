@@ -8,37 +8,17 @@
     <link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
-	<div id="app">
+	<div id="app" class="container-fluid">
+<!--codecasts.com-->
         <?php include __DIR__ . '/../layouts/header.php'?>
 
-        <div class="container">
-            <div id="testImg" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#testImg" data-slide-to="0" class="active"></li>
-                    <li data-target="#testImg" data-slide-to="1"></li>
-                    <li data-target="#testImg" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="/images/banner/banner.gif" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/images/banner/banner_1.jpg" class="d-block w-100">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="/images/banner/banner_3.jpg" class="d-block w-100">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#testImg" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#testImg" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
+			<div class="row jumbotron p-3 p-md-5 text-white rounded bg-dark">
+				<div class="col-md-6 px-0">
+					<h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+					<p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+					<p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+				</div>
+			</div>
 
         <?php include __DIR__ . '/../layouts/footer.php'?>
 	</div>
