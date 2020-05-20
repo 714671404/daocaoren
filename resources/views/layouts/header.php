@@ -1,33 +1,60 @@
-<header class="header">
-	<nav class="navbar">
-		<a href="/" class="logo"><img src="/images/logo.png"></a>
-		<ul class="nav">
-			<li><a href="/">首页</a></li>
-			<li><a href="">HTML</a></li>
-			<li><a href="">CSS</a></li>
-			<li><a href="">JavaScript</a></li>
-			<li><a href="">PHP</a></li>
-			<li><a href="">Python</a></li>
-		</ul>
-        <div class="select">
-            <form>
-                <input type="text" class="select-input" placeholder="输入搜索内容">
+<header id="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!--.navbar-text 用于添加垂直居中的文本字符串。-->
+
+        <!--.navbar-brand 为您的公司，产品或项目名称。-->
+        <a href="/" class="navbar-brand">稻草人</a>
+        <!--
+            .navbar-toggler 用於我們的折疊插件和其他 navigation toggling 行為。
+            data-target对应隐藏模型id
+        -->
+        <button class="navbar-toggler"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- collapse .navbar-collapse用于通过父断点进行分组和隐藏导航列内容。-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- .navbar-nav 提供完整的高和轻便的导航（包括对下拉菜单的支持）。-->
+            <ul class="navbar-nav mr-auto">
+                <!--
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">首页</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       id="navbarDropdown"
+                       role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                       href="#">文章</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">PHP</a>
+                        <a class="dropdown-item" href="#">CSS</a>
+                        <a class="dropdown-item" href="#">JavaScript</a>
+                        <a class="dropdown-item" href="#">Python</a>
+                    </div>
+                </li>
+            </ul>
+
+            <!--.form-inline 用于任何表单控件和操作。-->
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="搜索" aria-label="Search">
+                <button class="btn btn-primary my-2 my-sm-0" type="submit">搜索</button>
             </form>
+            <a href="/login" class="btn btn-group">登录</a>
+            <a href="/register" class="btn btn-group">注册</a>
         </div>
-		<div class="auth">
-            <?php if (!isset($_SESSION['username'])) {?>
-            <a href="/login" class="btn login-btn">登录</a>
-            <a href="/register" class="btn register-btn">注册</a>
-            <?php } else {?>
-            <div class="user">
-                <div class="avatar"><img src="<?php echo $_SESSION['avatar']?>"></div>
-                <ul class="nav">
-                    <li><a href="/user/<?php echo $_SESSION['id']?>">个人中心</a></li>
-                    <li><a href="/article/create">创建文章</a></li>
-                    <li><a href="/logout">退出</a></li>
-                </ul>
-            </div>
-            <?php }?>
-		</div>
-	</nav>
+    </nav>
 </header>
