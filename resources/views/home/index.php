@@ -125,7 +125,6 @@
     <script src="/js/bootstrap/bootstrap.min.js"></script>
     <script>
         $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
-            console.log(this);
             var arr = [
                 {
                     id: 1,
@@ -186,10 +185,7 @@
             var
                 dom = $("#" + e.target.getAttribute('aria-controls'))[0].children[0],
                 tmp;
-
-
             for (var i = 0; i < arr.length; i++) {
-                break;
                 tmp = "" +
                     "<li class=\"container pt-3 pb-3 border-bottom\">" +
                     "   <div class=\"row\">" +
@@ -226,8 +222,6 @@
                     "</li>";
                 dom.innerHTML += tmp;
             }
-
-
 
             // 根据要求创建元素并且为元素赋值后返回
             function createEl(el, option)
