@@ -1,5 +1,5 @@
-<header id="header">
-    <nav class="row navbar navbar-expand-lg navbar-light bg-light">
+<header id="header" class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
             <!--.navbar-text 用于添加垂直居中的文本字符串。-->
 
             <!--.navbar-brand 为您的公司，产品或项目名称。-->
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- .navbar-nav 提供完整的高和轻便的导航（包括对下拉菜单的支持）。-->
                 <ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
+					<li class="nav-item">
 						<a class="nav-link" href="/article">文章</a>
 					</li>
 					<li class="nav-item">
