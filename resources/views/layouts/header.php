@@ -1,9 +1,9 @@
-<header id="header" class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light">
+<header id="header" class="bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light mx-auto p-0">
             <!--.navbar-text 用于添加垂直居中的文本字符串。-->
 
             <!--.navbar-brand 为您的公司，产品或项目名称。-->
-            <a href="/" class="navbar-brand">稻草人</a>
+            <a href="/" class="navbar-brand ml-3">稻草人</a>
             <!--
                 .navbar-toggler 用於我們的折疊插件和其他 navigation toggling 行為。
                 data-target对应隐藏模型id
@@ -56,9 +56,9 @@
                     </li>
                 </ul>
 				<!--用户信息-->
-				<div class="navbar-nav navbar-expand user-info">
+				<div class="navbar-nav user-info">
 					<a class="btn">登陆</a>
-					<a class="btn ml-sm-2">注册账户</a>
+					<a class="btn">注册</a>
 				</div>
             </div>
     </nav>
