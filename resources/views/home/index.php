@@ -17,6 +17,31 @@
             <div class="row mt-3 mb-4">
                 <!--文章展示区-->
                 <div class="col-sm-8 col-md-8">
+					<!--图片轮播-->
+					<div id="carouselExampleIndicators" class="carousel slide mb-3" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="/images/banner/banner1.jpg" class="d-block w-100" alt="...">
+							</div>
+							<div class="carousel-item">
+								<img src="/images/banner/banner2.jpg" class="d-block w-100" alt="...">
+							</div>
+						</div>
+						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+
+
                     <div class="bg-white">
                         <nav>
                             <div class="nav nav-pills toast-header" id="nav-tab" role="tablist">
@@ -85,7 +110,7 @@
                                                     </ul>
                                                 </div>
                                                 <div class="col-3">
-                                                    <a href="/article/1">
+                                                    <a href="/article/1" class="d-block">
                                                         <img src="/images/banner/banner_3.jpg" class="img-fluid">
                                                     </a>
                                                 </div>
@@ -93,19 +118,17 @@
                                         </li>
                                     </ul>
                                 </div>
-
-
                                 <div class="tab-pane fade"
                                      id="nav-new"
                                      role="tabpanel"
                                      aria-labelledby="nav-new-tab">
-                                    <ul class="nav nav flex-column nav-list"></ul>
+                                    <ul class="nav flex-column nav-list"></ul>
                                 </div>
                                 <div class="tab-pane fade"
                                      id="nav-new-list"
                                      role="tabpanel"
                                      aria-labelledby="nav-new-list-tab">
-                                    这里是热门榜单展示区
+									<ul class="nav flexcolumn nav-list"></ul>
                                 </div>
                             </div>
                         </nav>
@@ -124,115 +147,118 @@
     <script src="/js/jquery/jquery.3.5.1.min.js"></script>
     <script src="/js/bootstrap/bootstrap.min.js"></script>
     <script>
-        $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
-            var arr = [
-                {
-                    id: 1,
-                    title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
-                    text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
-                    img: '/images/banner/banner_3.jpg',
-                    url: '/article/1',
-                    name: '碧海蓝天',
-                    comment: 48,
-                    attention: 200,
-                    time: "2020-5-21"
-                },
-                {
-                    id: 1,
-                    title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
-                    text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
-                    img: '/images/banner/banner_3.jpg',
-                    url: '/article/1',
-                    name: '碧海蓝天',
-                    comment: 48,
-                    attention: 200,
-                    time: "2020-5-21"
-                },
-                {
-                    id: 1,
-                    title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
-                    text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
-                    img: '/images/banner/banner_3.jpg',
-                    url: '/article/1',
-                    name: '碧海蓝天',
-                    comment: 48,
-                    attention: 200,
-                    time: "2020-5-21"
-                },
-                {
-                    id: 1,
-                    title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
-                    text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
-                    img: '/images/banner/banner_3.jpg',
-                    url: '/article/1',
-                    name: '碧海蓝天',
-                    comment: 48,
-                    attention: 200,
-                    time: "2020-5-21"
-                },
-                {
-                    id: 1,
-                    title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
-                    text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
-                    img: '/images/banner/banner_3.jpg',
-                    url: '/article/1',
-                    name: '碧海蓝天',
-                    comment: 48,
-                    attention: 200,
-                    time: "2020-5-21"
-                }
-            ];
-            var
-                dom = $("#" + e.target.getAttribute('aria-controls'))[0].children[0],
-                tmp;
-            for (var i = 0; i < arr.length; i++) {
-                tmp = "" +
-                    "<li class=\"container pt-3 pb-3 border-bottom\">" +
-                    "   <div class=\"row\">" +
-                    "       <div class=\"col-9 title-row\">" +
-                    "           <a href=\"" + arr[i].url + "\" class=\"title\">" + arr[i].title + "</a>" +
-                    "           <p class=\"body mt-1 mt-1 mb-1\">" + arr[i].text + "</p>" +
-                    "           <ul class=\"nav\">" +
-                    "               <li class=\"nav-item\">" +
-                    "                   <a class=\"nav-list mr-2\" href=\"/user/" + arr[i].id + "\">" +
-                    "                       <span>" + arr[i].name + "</span>" +
-                    "                   </a>" +
-                    "               </li>" +
-                    "               <li class=\"nav-item\">" +
-                    "                   <a class=\"nav-list mr-2\" href=\"/user/" + arr[i].id + "\">" +
-                    "                       <i class=\"iconfont icon-xiaoxikefuxinxitongzhi\"></i>" + arr[i].comment +
-                    "                   </a>" +
-                    "               </li>" +
-                    "               <li class=\"nav-item\">" +
-                    "                   <span class=\"nav-list mr-2\">" +
-                    "                       <i class=\"iconfont icon-aixin\"></i>" + arr[i].attention +
-                    "                   </span>" +
-                    "               </li>" +
-                    "               <li class=\"nav-item\">" +
-                    "                   <span class=\"nav-list mr-2\">" + arr[i].time + "</span>" +
-                    "               </li>" +
-                    "           </ul>" +
-                    "       </div>" +
-                    "       <div class=\"col-3\">" +
-                    "           <a href=\"/article/" + arr[i].id + "\">" +
-                    "               <img src=\"" + arr[i].img + "\" class=\"img-fluid\">" +
-                    "           </a>" +
-                    "       </div>" +
-                    "   </div>" +
-                    "</li>";
-                dom.innerHTML += tmp;
-            }
-
-            // 根据要求创建元素并且为元素赋值后返回
-            function createEl(el, option)
-            {
-                var elements = document.createElement(el);
-                for (var i in option) {
-                    elements.setAttribute(i, option[i]);
-                }
-                return elements;
-            }
-        });
+			$(function() {
+				init();
+				function init()
+				{
+					var a = $('#nav-tab a');
+					for (var i = 0; i < a.length; i ++) {
+						if (a[i].className.indexOf('active') !== -1) {
+							loading(a[i]);
+							break;
+						}
+					}
+				}
+				$('#nav-tab').on('show.bs.tab', loading);
+				function loading(e) {
+					var arr = [
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						},
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						},
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						},
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						},
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						}
+					],
+						dom = $(typeof e.target === 'string' ? e.getAttribute('href') : e.target.getAttribute('href'))[0].children[0],
+						tmp;
+					for (var i = 0; i < arr.length; i++) {
+						tmp = "" +
+							"<li class=\"container pt-3 pb-3 border-bottom\">" +
+							"   <div class=\"row\">" +
+							"       <div class=\"col-9 title-row\">" +
+							"           <a href=\"" + arr[i].url + "\" class=\"title\">" + arr[i].title + "</a>" +
+							"           <p class=\"body mt-1 mt-1 mb-1\">" + arr[i].text + "</p>" +
+							"           <ul class=\"nav\">" +
+							"               <li class=\"nav-item\">" +
+							"                   <a class=\"nav-list mr-2\" href=\"/user/" + arr[i].id + "\">" +
+							"                       <span>" + arr[i].name + "</span>" +
+							"                   </a>" +
+							"               </li>" +
+							"               <li class=\"nav-item\">" +
+							"                   <a class=\"nav-list mr-2\" href=\"/user/" + arr[i].id + "\">" +
+							"                       <i class=\"iconfont icon-xiaoxikefuxinxitongzhi\"></i>" + arr[i].comment +
+							"                   </a>" +
+							"               </li>" +
+							"               <li class=\"nav-item\">" +
+							"                   <span class=\"nav-list mr-2\">" +
+							"                       <i class=\"iconfont icon-aixin\"></i>" + arr[i].attention +
+							"                   </span>" +
+							"               </li>" +
+							"               <li class=\"nav-item\">" +
+							"                   <span class=\"nav-list mr-2\">" + arr[i].time + "</span>" +
+							"               </li>" +
+							"           </ul>" +
+							"       </div>" +
+							"       <div class=\"col-3\">" +
+							"           <a href=\"/article/" + arr[i].id + "\">" +
+							"               <img src=\"" + arr[i].img + "\" class=\"img-fluid\">" +
+							"           </a>" +
+							"       </div>" +
+							"   </div>" +
+							"</li>";
+						dom.innerHTML += tmp;
+					}
+				}
+			});
     </script>
 </body>
 </html>

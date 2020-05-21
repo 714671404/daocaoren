@@ -1,7 +1,6 @@
 <header id="header" class="bg-white shadow-sm">
     <nav class="navbar navbar-expand-lg navbar-light mx-auto p-0">
             <!--.navbar-text 用于添加垂直居中的文本字符串。-->
-
             <!--.navbar-brand 为您的公司，产品或项目名称。-->
             <a href="/" class="navbar-brand ml-3">稻草人</a>
             <!--

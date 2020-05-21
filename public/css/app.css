@@ -45,7 +45,6 @@ body {
 }
 #header> nav {
 	max-width: 1440px;
-	/*box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);*/
 }
 #header .navbar-nav>li.nav-item>a {
 	padding: 10px 20px;
@@ -72,6 +71,7 @@ body {
 }
 #nav-tabContent .container img {
 	border-radius: 5px;
+	width: 150px;
 	height: 100px;
 }
 .nav-list>li:last-child {
@@ -94,4 +94,3 @@ body {
 	font-size: 14px;
 	color: #b4b4b4;
 }
-
