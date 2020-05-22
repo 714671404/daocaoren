@@ -282,9 +282,6 @@
 					}
 				}
 			});
-            $(document).scroll(function(e) {
-                console.log(e);
-            })
     </script>
 </body>
 </html>
