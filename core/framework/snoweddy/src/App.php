@@ -22,6 +22,7 @@ class App
      */
     public function run()
     {
+        define('VIEW', APP_PATH . '/resources/views');
         $this->http();
     }
 

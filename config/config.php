@@ -2,7 +2,7 @@
 
 return [
     'app_name' => 'daocaoren',
-    'default_controller' => 'Index',
+    'default_controller' => 'home/Index',
     'default_action' => 'index',
     'debug' => true,
     'db' => [

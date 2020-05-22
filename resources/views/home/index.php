@@ -10,9 +10,8 @@
 </head>
 <body>
 	<div id="app">
-<!--codecasts.com-->
-        <?php include __DIR__ . '/../layouts/header.php'?>
-
+        <!--codecasts.com-->
+        @include('layouts.header')
         <div class="container">
             <div class="row mt-3 mb-4">
                 <!--主体内容-->
@@ -163,7 +162,7 @@
             </div>
         </div>
 
-        <?php include __DIR__ . '/../layouts/footer.php'?>
+        @include('layouts.footer')
 	</div>
 
     <script src="/js/jquery/jquery.3.5.1.min.js"></script>
