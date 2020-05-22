@@ -85,7 +85,7 @@ class Route
         // 实例化类
         $dispatch = new $controller();
         // 调用类方法
-        return print_r(call_user_func_array([$dispatch, $route[0]], $params));
+        print_r(call_user_func_array([$dispatch, $route[0]], $params));
     }
 
     /*
@@ -99,7 +99,6 @@ class Route
     {
         // 初始化变量放置参数
         $params = [];
-
         // 拆分url便于在数组当中查找，并且获取数组长度
         $route = explode('/', $route);
         $routeLength = count($route);
@@ -173,7 +172,5 @@ class Route
         } else {
             die('路由当中不存在' . $method . '方法');
         }
-
-
     }
 }

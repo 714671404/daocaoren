@@ -7,6 +7,6 @@ class UserController extends Controller
 {
     public function index($id)
     {
-        $this->view('user/personal_info');
+        return view('user/personal_info');
     }
 }

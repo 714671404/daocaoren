@@ -33,3 +33,9 @@ if (!function_exists('response')) {
         return (new snoweddy\src\library\Response())->json($data, $statusCode);
     }
 }
+if (!function_exists('redirect')) {
+    function redirect($uri)
+    {
+        return (new snoweddy\src\base\View())->redirect($uri);
+    }
+}

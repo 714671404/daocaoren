@@ -29,18 +29,18 @@ class Autoloader
     private static function classMap()
     {
         return [
-            'snoweddy\\src\\App' => APP_PATH . '/core/framework/snoweddy/src/App.php',
-            'snoweddy\\src\\base\\Controller' => APP_PATH . '/core/framework/snoweddy/src/base/Controller.php',
-            'snoweddy\\src\\base\\Model' => APP_PATH . '/core/framework/snoweddy/src/base/Model.php',
-            'snoweddy\\src\\base\\View' => APP_PATH . '/core/framework/snoweddy/src/base/View.php',
-            'snoweddy\\src\\base\\Env' => APP_PATH . '/core/framework/snoweddy/src/base/Env.php',
-            'snoweddy\\src\\db\\Sql' => APP_PATH . '/core/framework/snoweddy/src/db/Sql.php',
-            'snoweddy\\src\\db\\DB' => APP_PATH . '/core/framework/snoweddy/src/db/DB.php',
-            'snoweddy\\src\\db\\DBDome' => APP_PATH . '/core/framework/snoweddy/src/db/DBDome.php',
-            'snoweddy\\src\\route\\Route' => APP_PATH . '/core/framework/snoweddy/src/route/Route.php',
-            'snoweddy\\src\\library\\Response' => APP_PATH . '/core/framework/snoweddy/src/library/Response.php',
-			'snoweddy\\src\\library\\Verification' => APP_PATH . '/core/framework/snoweddy/src/library/Verification.php',
-			'snoweddy\\src\\library\\Upload' => APP_PATH . '/core/framework/snoweddy/src/library/Upload.php',
+            'snoweddy\\src\\App' => __DIR__ . '/../framework/snoweddy/src/App.php',
+            'snoweddy\\src\\base\\Controller' => __DIR__ . '/../framework/snoweddy/src/base/Controller.php',
+            'snoweddy\\src\\base\\Model' => __DIR__ . '/../framework/snoweddy/src/base/Model.php',
+            'snoweddy\\src\\base\\View' => __DIR__ . '/../framework/snoweddy/src/base/View.php',
+            'snoweddy\\src\\base\\Env' => __DIR__ . '/../framework/snoweddy/src/base/Env.php',
+            'snoweddy\\src\\db\\Sql' => __DIR__ . '/../framework/snoweddy/src/db/Sql.php',
+            'snoweddy\\src\\db\\DB' => __DIR__ . '/../framework/snoweddy/src/db/DB.php',
+            'snoweddy\\src\\db\\DBDome' => __DIR__ . '/../framework/snoweddy/src/db/DBDome.php',
+            'snoweddy\\src\\route\\Route' => __DIR__ . '/../framework/snoweddy/src/route/Route.php',
+            'snoweddy\\src\\library\\Response' => __DIR__ . '/../framework/snoweddy/src/library/Response.php',
+			'snoweddy\\src\\library\\Verification' => __DIR__ . '/../framework/snoweddy/src/library/Verification.php',
+			'snoweddy\\src\\library\\Upload' => __DIR__ . '/../framework/snoweddy/src/library/Upload.php',
         ];
     }
 }

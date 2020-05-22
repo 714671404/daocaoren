@@ -15,7 +15,8 @@ class DB extends PDO
     protected $dbConfig = [];
     protected $options;
 
-    public function __construct()
+
+    private function __construct()
     {
         $this->dbConfig =  config('config.db');
         $this->options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
@@ -24,6 +25,14 @@ class DB extends PDO
         } else if ($this->dbConfig['connection'] === 'sqlite') {
             $this->connSqlite();
         }
+    }
+
+    public static function init()
+    {
+        if (self::$_instance === null)
+            self::$_instance = new self();
+
+        return self::$_instance;
     }
 
     /*
