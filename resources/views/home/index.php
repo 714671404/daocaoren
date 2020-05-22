@@ -15,10 +15,10 @@
 
         <div class="container">
             <div class="row mt-3 mb-4">
-                <!--文章展示区-->
-                <div class="col-sm-8 col-md-8">
+                <!--主体内容-->
+                <div class="col-sm-9 col-md-9 col-sm-9">
 					<!--图片轮播-->
-					<div id="carouselExampleIndicators" class="carousel slide mb-3" data-ride="carousel">
+					<div id="carouselExampleIndicators" class="carousel slide mb-3 shadow-sm" data-ride="carousel">
 						<ol class="carousel-indicators">
 							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -40,9 +40,8 @@
 							<span class="sr-only">Next</span>
 						</a>
 					</div>
-
-
-                    <div class="bg-white">
+                    <!--文章展示区-->
+                    <div class="bg-white shadow-sm">
                         <nav>
                             <div class="nav nav-pills toast-header" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active"
@@ -78,8 +77,7 @@
                                      id="nav-popular"
                                      role="tabpanel"
                                      aria-labelledby="nav-popular-tab">
-                                    <ul class="nav flex-column nav-list">
-                                        <li class="container pt-3 pb-3 border-bottom">
+                                    <ul class="nav flex-column nav-list"><!--<li class="container pt-3 pb-3 border-bottom">
                                             <div class="row">
                                                 <div class="col-9 title-row">
                                                     <a href="/article/1" class="title">基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用</a>
@@ -115,8 +113,7 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                        </li>
-                                    </ul>
+                                        </li>--></ul>
                                 </div>
                                 <div class="tab-pane fade"
                                      id="nav-new"
@@ -135,8 +132,33 @@
                     </div>
                 </div>
                 <!--其他展示区-->
-                <div class="col-sm-4">
-                    <div class="bg-info">1231231</div>
+                <div class="col-sm-3">
+                    <!--友情链接-->
+                    <div class="bg-white shadow-sm">
+                        <div class="title pt-3 pl-3 pb-3 border-bottom">友情链接</div>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a href="https://google.com" class="nav-link">
+                                    google
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://www.awaimai.com/" class="nav-link">
+                                    歪卖博客
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://zhihu.com" class="nav-link">
+                                    知乎
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://jianshu.com" class="nav-link">
+                                    简书
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -146,6 +168,7 @@
 
     <script src="/js/jquery/jquery.3.5.1.min.js"></script>
     <script src="/js/bootstrap/bootstrap.min.js"></script>
+    <!--<script src="/js/bootstrap/bootstrap.bundle.min.js"></script>-->
     <script>
 			$(function() {
 				init();
@@ -259,6 +282,9 @@
 					}
 				}
 			});
+            $(document).scroll(function(e) {
+                console.log(e);
+            })
     </script>
 </body>
 </html>
