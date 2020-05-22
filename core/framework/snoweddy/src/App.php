@@ -97,6 +97,6 @@ class App
      */
     public function init()
     {
-         include_once __DIR__ . '/library/function.php';
+         include_once __DIR__ . '/library/helpers.php';
     }
 }
