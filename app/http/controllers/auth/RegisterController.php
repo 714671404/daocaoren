@@ -44,7 +44,7 @@ class RegisterController extends Controller
             $_SESSION['name'] = $result['name'];
             $_SESSION['username'] = $result['username'];
             $_SESSION['avatar'] = $result['avatar'];
-            return $this->redirect('/');
+            return redirect('/');
         } else {
             echo '<script>alert(\'注册信息格式不正确!\');</script>';
             return view('auth/register');
@@ -57,7 +57,7 @@ class RegisterController extends Controller
 	public function logout()
     {
         session_destroy();
-        return $this->redirect('/');
+        return redirect('/');
     }
 	
 	/*

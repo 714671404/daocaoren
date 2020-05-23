@@ -12,26 +12,21 @@
         @include('layouts.header')
 		<section class="container">
             <div class="w-50 bg-white m-5 ml-auto mr-auto">
-                <form class="p-5 shadow rounded" id="fromAuth" novalidate>
+                <form class="p-5 shadow rounded" id="fromAuth" action="/register" method="post" novalidate>
                     <div class="text-center mb-4 h4">注册账号</div>
                     <div class="form-group">
                         <label class="sr-only" for="inputName">用户名</label>
-                        <input type="text" class="form-control" id="inputName" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="用户名">
+                        <input type="text" class="form-control" id="inputName" name="name" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="用户名">
                         <div class="invalid-feedback"><small>请输入用户名6-30位字母或数字！</small></div>
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="inputUsername">账号</label>
-                        <input type="text" class="form-control" id="inputUsername" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="账号">
+                        <input type="text" class="form-control" id="inputUsername" name="username" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="账号">
                         <div class="invalid-feedback"><small>请输入用户名6-30位字母或数字！</small></div>
                     </div>
                     <div class="form-group">
                         <label class="sr-only" for="inputPass">密码</label>
-                        <input type="password" class="form-control" id="inputPass" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="密码">
-                        <div class="invalid-feedback"><small>请输入用户名6-30位字母或数字！</small></div>
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only" for="inputPass">确认密码</label>
-                        <input type="password" class="form-control" id="inputPass" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="确认密码">
+                        <input type="password" class="form-control" id="inputPass" name="password" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="密码">
                         <div class="invalid-feedback"><small>请输入用户名6-30位字母或数字！</small></div>
                     </div>
                     <div class="form-group">
@@ -53,11 +48,13 @@
             $('#fromAuth').submit(function (event) {
                 var f = $(this);
                 if(f[0].checkValidity()===false){
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-                f.addClass("was-validated")
-                return false;
+                    event.preventDefault();
+                    event.stopPropagation();
+					f.addClass("was-validated");
+					return false;
+                } else {
+                	return true;
+				}
             });
         });
     </script>

@@ -18,7 +18,6 @@
                 type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <!-- collapse .navbar-collapse用于通过父断点进行分组和隐藏导航列内容。-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- .navbar-nav 提供完整的高和轻便的导航（包括对下拉菜单的支持）。-->
@@ -55,10 +54,13 @@
                 </li>-->
             </ul>
             <!--用户信息-->
-            <div class="navbar-nav user-info">
-                <a class="btn" href="/login">登陆</a>
-                <a class="btn" href="/register">注册</a>
-            </div>
+            <?php
+			if (isset($_SESSION['name'])) {?>
+			<div class="navbar-nav user-info">
+				<a class="btn" href="/login">登陆</a>
+				<a class="btn" href="/register">注册</a>
+			</div>
+			<?php }?>
         </div>
     </nav>
 </header>

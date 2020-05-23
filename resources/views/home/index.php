@@ -11,7 +11,8 @@
 <body>
 	<div id="app">
         <!--codecasts.com-->
-        @include('layouts.header')
+		<!--header文件php代码不读问题-->
+		<?php include VIEW . '/layouts/header.php'?>
         <div class="container">
             <div class="row mt-3 mb-4">
                 <!--主体内容-->
@@ -162,7 +163,7 @@
             </div>
         </div>
 
-        @include('layouts.footer')
+        <?php include VIEW . '/layouts/footer.php'?>
 	</div>
 
     <script src="/js/jquery/jquery.3.5.1.min.js"></script>
