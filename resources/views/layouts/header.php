@@ -1,5 +1,5 @@
 <header id="header" class="bg-white shadow-sm">
-    <nav class="navbar navbar-expand-lg navbar-light mx-auto p-0">
+    <nav class="navbar navbar-expand-lg navbar-light mx-auto p-1">
         <!--.navbar-text 用于添加垂直居中的文本字符串。-->
         <!--.navbar-brand 为您的公司，产品或项目名称。-->
         <a href="/" class="navbar-brand ml-3">稻草人</a>
@@ -38,7 +38,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Python</a>
                 </li>
-                <li class="nav-item dropdown">
+                <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle"
                        id="navbarDropdown"
                        role="button"
@@ -52,12 +52,12 @@
                         <a class="dropdown-item" href="#">JavaScript</a>
                         <a class="dropdown-item" href="#">Python</a>
                     </div>
-                </li>
+                </li>-->
             </ul>
             <!--用户信息-->
             <div class="navbar-nav user-info">
-                <a class="btn">登陆</a>
-                <a class="btn">注册</a>
+                <a class="btn" href="/login">登陆</a>
+                <a class="btn" href="/register">注册</a>
             </div>
         </div>
     </nav>

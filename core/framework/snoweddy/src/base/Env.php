@@ -3,7 +3,7 @@ namespace snoweddy\src\base;
 
 class Env
 {
-    public static function config($path = 'config')
+    public static function config($path = 'app')
     {
         $string = APP_PATH . DS . 'config' . DS;
         $config = [];

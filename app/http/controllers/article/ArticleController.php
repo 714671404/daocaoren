@@ -21,15 +21,15 @@ class ArticleController extends Controller
 	{
         $data = $this->article->select_article($id);
         if ($data) {
-            $this->view('article/show', $data);
+            return view('article/show', $data);
         } else {
-            $this->view('error/404');
+            return view('error/404');
         }
 	}
 	
     public function create()
     {
-        $this->view('article/create');
+        return view('article/create');
     }
 
     public function store()
@@ -44,7 +44,7 @@ class ArticleController extends Controller
             $this->redirect("/article/{$result}");
         } else {
             echo "<script>alert('发布失败');</script>";
-            return $this->view('/article/create', $_POST);
+            return view('/article/create', $_POST);
         }
     }
 

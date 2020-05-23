@@ -18,7 +18,7 @@ class DB extends PDO
 
     private function __construct()
     {
-        $this->dbConfig =  config('config.db');
+        $this->dbConfig =  config('app.db');
         $this->options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
         if ($this->dbConfig['connection'] === 'mysql') {
             $this->connMysql();

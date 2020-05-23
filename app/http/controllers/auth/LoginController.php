@@ -8,7 +8,7 @@ class LoginController extends Controller
 {
 	public function show()
 	{
-		return $this->view('auth/login');
+		return view('auth/login');
 	}
 
 	public function login()
@@ -23,7 +23,7 @@ class LoginController extends Controller
             return $this->redirect('/');
         } else {
             echo '<script>alert(\'账户或用户名不正确!\');</script>';
-            return $this->view('auth/login');
+            return view('auth/login');
         }
     }
 }

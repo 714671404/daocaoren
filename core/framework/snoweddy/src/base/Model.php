@@ -13,7 +13,7 @@ class Model
     protected $primary = 'id';
     protected $db;
 
-    protected function __construct()
+    public function __construct()
     {
         $this->model = $this->model ?? substr(strrchr(get_class($this), '\\'), 1);
         $this->table = $this->table ?? strtolower($this->model) . 's';

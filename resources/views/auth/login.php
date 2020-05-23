@@ -4,11 +4,12 @@
 	<meta charset="utf-8">
 	<title>登录</title>
 	<link href="/images/favicon.ico" rel="icon" type="image/ico">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
 	<div id="app">
-		<?php include __DIR__ . "/../layouts/header.php"?>
+		@include('layouts.header')
 		<section class="container">
 			<div class="auth box">
 				<h3 class="title">登录</h3>
@@ -25,7 +26,7 @@
 				</form>
 			</div>
 		</section>
-		<?php include __DIR__ . "/../layouts/footer.php"?>
+        @include('layouts.footer')
 	</div>
 </body>
 </html>

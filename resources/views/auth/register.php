@@ -4,117 +4,62 @@
 	<meta charset="utf-8">
 	<title>注册</title>
 	<link href="/images/favicon.ico" rel="icon" type="image/ico">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
 	<div id="app">
-		<?php include __DIR__ . "/../layouts/header.php"?>
+        @include('layouts.header')
 		<section class="container">
-			<div class="auth box">
-				<h3 class="title">注册</h3>
-				<form action="/register" method="post">
-					<div class="input-layouts">
-						<input type="text" name="name" placeholder="设置昵称" data-index="1" maxlength="25">
-						<i class="iconfont icon-yonghu"></i>
-                        <span class="error">123</span>
-					</div>
-					<div class="input-layouts">
-						<input type="text" name="username" placeholder="请输入会员账号" data-index="2" maxlength="25">
-						<i class="iconfont icon-yonghu"></i>
-                        <span class="error">123</span>
-					</div>
-					<div class="input-layouts">
-						<input type="password" name="password" placeholder="请输入密码" data-index="3" maxlength="35">
-						<i class="iconfont icon--"></i>
-                        <span class="error">123</span>
-					</div>
-					<button class="btn blue-btn">注册</button>
-				</form>
-			</div>
+            <div class="w-50 bg-white m-5 ml-auto mr-auto">
+                <form class="p-5 shadow rounded" id="fromAuth" novalidate>
+                    <div class="text-center mb-4 h4">注册账号</div>
+                    <div class="form-group">
+                        <label class="sr-only" for="inputName">用户名</label>
+                        <input type="text" class="form-control" id="inputName" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="用户名">
+                        <div class="invalid-feedback"><small>请输入用户名6-30位字母或数字！</small></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="inputUsername">账号</label>
+                        <input type="text" class="form-control" id="inputUsername" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="账号">
+                        <div class="invalid-feedback"><small>请输入用户名6-30位字母或数字！</small></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="inputPass">密码</label>
+                        <input type="password" class="form-control" id="inputPass" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="密码">
+                        <div class="invalid-feedback"><small>请输入用户名6-30位字母或数字！</small></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="inputPass">确认密码</label>
+                        <input type="password" class="form-control" id="inputPass" required="required"  pattern="[A-Za-z0-9]{6,30}" placeholder="确认密码">
+                        <div class="invalid-feedback"><small>请输入用户名6-30位字母或数字！</small></div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">注册</button>
+                    </div>
+                    <div class="form-group">
+                        <button type="reset" class="btn btn-secondary btn-block">重置</button>
+                    </div>
+                </form>
+            </div>
 		</section>
-		<?php include __DIR__ . "/../layouts/footer.php"?>
+		@include('layouts.footer')
 	</div>
-	<script src="/js/app.js" type="text/javascript"></script>
+	<script src="/js/jquery/jquery.3.5.1.min.js"></script>
+	<script src="/js/bootstrap/bootstrap.min.js"></script>
+    <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
     <script>
-        var
-            form = document.querySelector(".auth form"),
-            str,
-            obj,
-            error_message = form.querySelectorAll('.input-layouts .error');
-
-        obj = form.querySelectorAll('input');
-        for (var i = 0; i < obj.length; i ++) {
-            obj[i].onblur = function() {
-                var
-                    index = this.getAttribute('data-index') - 1,
-                    error_mes = validator(this.value, index);
-
-                if (index === 1) {
-                    lib.ajax({
-                        url: '/user',
-                        data: {
-                            username: this.value
-                        },
-                        success: function(result) {
-                        	var result = JSON.parse(result);
-                        	console.log(result);
-                        	if (result.data) {
-								error_message[index].style.display = 'inline';
-								error_message[index].innerHTML = '会员账号已经存在';
-							}
-                        }
-                    });
+        $(function() {
+            $('#fromAuth').submit(function (event) {
+                var f = $(this);
+                if(f[0].checkValidity()===false){
+                    event.preventDefault()
+                    event.stopPropagation()
                 }
-                if (error_mes !== true) {
-                    error_message[index].style.display = 'inline';
-                    error_message[index].innerHTML = ['昵称', '账号', '密码'][index] + error_mes;
-                } else {
-                    error_message[index].style.display = 'none';
-                }
-            }
-        }
-        form.querySelector('button').onclick = function() {
-            var
-                name = form.name.value,
-                username = form.username.value,
-                pass = form.password.value;
-
-            if ((name.length === 0) || (username.length === 0) || (pass.length === 0)) {
-                alert('注册信息不能为空!');
+                f.addClass("was-validated")
                 return false;
-            }
-            for (var i = 0; i < error_message.length; i ++) {
-                if (error_message[i].style.display === 'inline') {
-                    alert('请核对注册系信息格式知否正确!');
-                    return false;
-                }
-            }
-            form.submit();
-
-        };
-        function validator(data, index)
-        {
-            if (data.length === 0) {
-                return '不能为空';
-            }
-            var min = [2, 4, 6];
-            if (data.length < min[index]) {
-                return '长度不能小于' + min[index];
-            }
-            var max = [25, 25, 35];
-            if (data.length > max[index]) {
-                return '长度不可以大于' + max[index];
-            }
-            var str = 'qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM@.';
-            if (index === 1) {
-                for (var i = 0; i < data.length; i ++) {
-                    if (str.indexOf(data[i]) === -1) {
-                        return '内不能包含特殊符号';
-                    }
-                }
-            }
-            return true;
-        }
+            });
+        });
     </script>
 </body>
 </html>

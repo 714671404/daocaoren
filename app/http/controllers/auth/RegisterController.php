@@ -22,7 +22,7 @@ class RegisterController extends Controller
 	 */
 	public function show()
 	{
-		return $this->view('auth/register');
+		return view('auth/register');
 	}
 	
 	/*
@@ -47,7 +47,7 @@ class RegisterController extends Controller
             return $this->redirect('/');
         } else {
             echo '<script>alert(\'注册信息格式不正确!\');</script>';
-            return $this->view('auth/register');
+            return view('auth/register');
         }
 	}
 

@@ -15,7 +15,7 @@ class DBAll
 
     private function __construct()
     {
-        $dbConfig = config('config.db');
+        $dbConfig = config('app.db');
         $this->dsn = sprintf(
             '%s:host=%s;dbname=%s;charset=utf8;',
             $dbConfig['connection'],

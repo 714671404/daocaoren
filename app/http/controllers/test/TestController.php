@@ -16,11 +16,11 @@ class TestController extends Controller
     }
     public function index()
     {
-        $this->view('test/index');
+        return view('test/index');
     }
     public function upload()
     {
         $result = Upload::upload_image($_FILES['file'], '/upload');
-        $this->view('test/index', $result);
+        return view('test/index', $result);
     }
 }

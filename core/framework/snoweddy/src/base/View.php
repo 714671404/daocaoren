@@ -14,7 +14,6 @@ class View
     public function view($path, array $data = [])
     {
         extract($data);
-
         $template = VIEW . '/' . $path . '.php';
         $pattern = [];
         $data = [];
@@ -27,8 +26,8 @@ class View
                 $str = '';
                 if (strpos($val, '\'') !== false) {
                     $str = explode('\'', $val);
-                } elseif (strpos($val, '\"') !== false) {
-                    $str = explode('\"', $val);
+                } elseif (strpos($val, '"') !== false) {
+                    $str = explode('"', $val);
                 } else {
                     $str = false;
                 }

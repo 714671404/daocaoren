@@ -1,7 +1,6 @@
 <?php
 namespace snoweddy\src;
 
-use snoweddy\src\base\Env;
 use snoweddy\src\route\Route;
 
 class App
@@ -19,8 +18,8 @@ class App
      */
     public function run($config)
     {
-        define('VIEW', APP_PATH . '/resources/views');
         define('DS', DIRECTORY_SEPARATOR);
+        define('VIEW', APP_PATH . '/resources/views');
         $this->config = $config;
         $this->http();
     }
