@@ -43,5 +43,6 @@ Route::post('uploads', 'Article\ArticleController@upload');
  */
 Route::get('test', 'test\TestController@index');
 Route::post('test', 'test\TestController@upload');
+Route::get('editor', 'test\TestController@editor');
 
 // https://www.cnblogs.com/wjm956/p/9449147.html

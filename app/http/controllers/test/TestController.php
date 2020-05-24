@@ -23,4 +23,9 @@ class TestController extends Controller
         $result = Upload::upload_image($_FILES['file'], '/upload');
         return view('test/index', $result);
     }
+
+    public function editor()
+    {
+        return view('test/editor');
+    }
 }
