@@ -6,10 +6,50 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>测试页面</title>
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap-combined.no-icons.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/font-awesome.css">
-    <link rel="stylesheet" href="/js/a/index.css" type="text/css">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="/css/bootstrap/font-awesome.css" rel="stylesheet">
+	<style>
+		#editor {
+			max-height: 250px;
+			height: 250px;
+			background-color: white;
+			border-collapse: separate;
+			border: 1px solid rgb(204, 204, 204);
+			padding: 4px;
+			box-sizing: content-box;
+			-webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+			box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+			border-top-right-radius: 3px; border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px; border-top-left-radius: 3px;
+			overflow: scroll;
+			outline: none;
+		}
+		#voiceBtn {
+			width: 20px;
+			color: transparent;
+			background-color: transparent;
+			transform: scale(2.0, 2.0);
+			-webkit-transform: scale(2.0, 2.0);
+			-moz-transform: scale(2.0, 2.0);
+			border: transparent;
+			cursor: pointer;
+			box-shadow: none;
+			-webkit-box-shadow: none;
+		}
+
+		div[data-role="editor-toolbar"] {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.dropdown-menu a {
+			cursor: pointer;
+		}
+
+	</style>
 </head>
 <body>
 
@@ -113,8 +153,8 @@
 </div>
 <script src="/js/jquery/jquery.3.5.1.min.js"></script>
 <script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="/js/a/bootstrap-wysiwyg.js"></script>
-<script src="/js/a/jquery.hotkeys.js"></script>
+<script src="/js/bootstrap/bootstrap-wysiwyg.js"></script>
+<script src="/js/jquery/jquery.hotkeys.js"></script>
 <script>
     $(function () {
         function initToolbarBootstrapBindings() {

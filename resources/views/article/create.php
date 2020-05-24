@@ -4,189 +4,192 @@
     <meta charset="utf-8">
     <title>添加文章</title>
     <link href="/images/favicon.ico" rel="icon" type="image/ico">
-	<link href="/css/app.css" rel="stylesheet" type="text/css">
+	<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap/font-awesome.css" rel="stylesheet">
+	<link href="/css/app.css" rel="stylesheet">
+	<style>
+		#editor {
+			max-height: calc(100vh - 293px);
+			height: calc(100vh - 293px);
+			background-color: white;
+			border-collapse: separate;
+			border: 1px solid rgb(204, 204, 204);
+			padding: 4px;
+			box-sizing: content-box;
+			-webkit-box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+			box-shadow: rgba(0, 0, 0, 0.0745098) 0px 1px 1px 0px inset;
+			border-top-right-radius: 3px; border-bottom-right-radius: 3px;
+			border-bottom-left-radius: 3px; border-top-left-radius: 3px;
+			overflow: scroll;
+			outline: none;
+			margin-bottom: 10px;
+		}
+		#voiceBtn {
+			width: 20px;
+			color: transparent;
+			background-color: transparent;
+			transform: scale(2.0, 2.0);
+			-webkit-transform: scale(2.0, 2.0);
+			-moz-transform: scale(2.0, 2.0);
+			border: transparent;
+			cursor: pointer;
+			box-shadow: none;
+			-webkit-box-shadow: none;
+		}
+
+		div[data-role="editor-toolbar"] {
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+
+		.dropdown-menu a {
+			cursor: pointer;
+		}
+
+	</style>
 </head>
 
 <body>
-	<?php include VIEW_PATH . '/layouts/header.php'?>
+	<?php include VIEW . '/layouts/header.php'?>
+	<!--https://blog.csdn.net/z9oclock/article/details/84070921-->
+	<!--https://www.tiny.cloud/docs/demo/basic-example/#-->
+	<!--https://www.teakki.com/p/57dfb282d3a7507f975e7ad0-->
+	<!--https://www.teakki.com/p/57dfb282d3a7507f975e7ad0-->
 		<section class="container">
-            <div class="article-form">
-                <form action="/article/store" method="post">
-                    <div class="form-group">
-                        <input type="text" name="title" placeholder="标题" value="">
-                    </div>
-                    <div class="form-group">
-                        <div id="edit"></div>
-                        <input type="hidden" name="text" value="">
-                        <input type="hidden" name="u_id" value="">
-                    </div>
-                    <div class="form-group">
-                        <button class="btn blue-btn">提交</button>
-                    </div>
-                </form>
-            </div>
+			<div style="margin-top:20px" class="input-group input-group-lg rounded">
+				<span class="input-group-addon"></span>
+				<input type="text" placeholder="标题" name="title" class="form-control">
+			</div>
+			<div style="margin-top:10px" data-role="editor-toolbar" data-target="#editor" class="btn-toolbar">
+				<div class="btn-group">
+					<a data-toggle="dropdown" title="Font" class="btn dropdown-toggle">
+						<i class="glyphicon glyphicon-font"></i>
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu"></ul>
+				</div>
+				<div class="btn-group">
+					<a data-toggle="dropdown" title="Font Size" class="btn dropdown-toggle">
+						<i class="glyphicon glyphicon-text-height"></i>
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a data-edit="fontSize 5"><font size="5">Huge</font></a></li>
+						<li><a data-edit="fontSize 3"><font size="3">Normal</font></a></li>
+						<li><a data-edit="fontSize 1"><font size="1">Small</font></a></li>
+					</ul>
+				</div>
+				<div class="btn-group">
+					<a data-edit="bold" title="Bold (Ctrl/Cmd+B)" class="btn">
+						<i class="icon-bold"></i>
+					</a>
+					<a data-edit="italic" title="Italic (Ctrl/Cmd+I)" class="btn">
+						<i class="icon-italic"></i>
+					</a>
+					<a data-edit="strikethrough" title="Strikethrough" class="btn">
+						<i class="icon-strikethrough"></i>
+					</a>
+					<a data-edit="underline" title="Underline (Ctrl/Cmd+U)" class="btn">
+						<i class="icon-underline"></i>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a data-edit="insertunorderedlist" title="Bullet list" class="btn">
+						<i class="icon-list-ul"></i>
+					</a>
+					<a data-edit="insertorderedlist" title="Number list" class="btn">
+						<i class="icon-list-ol"></i>
+					</a>
+					<a data-edit="outdent" title="Reduce indent (Shift+Tab)" class="btn">
+						<i class="icon-indent-left"></i>
+					</a>
+					<a data-edit="indent" title="Indent (Tab)" class="btn">
+						<i class="icon-indent-right"></i>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)" class="btn">
+						<i class="icon-align-left"></i>
+					</a>
+					<a data-edit="justifycenter" title="Center (Ctrl/Cmd+E)" class="btn">
+						<i class="icon-align-center"></i>
+					</a>
+					<a data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)" class="btn">
+						<i class="icon-align-right"></i>
+					</a>
+					<a data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)" class="btn">
+						<i class="icon-align-justify"></i>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a data-toggle="dropdown" title="Hyperlink" class="btn dropdown-toggle">
+						<i class="icon-link"></i>
+					</a>
+					<div class="dropdown-menu input-append">
+						<input placeholder="URL" type="text" data-edit="createLink" class="span2">
+						<button type="button" class="btn">Add</button>
+					</div>
+					<a data-edit="unlink" title="Remove Hyperlink" class="btn">
+						<i class="icon-cut"></i>
+					</a>
+				</div>
+				<div class="btn-group">
+					<a id="pictureBtn" title="Insert picture (or just drag &amp; drop)" class="btn">
+						<i class="icon-picture"></i>
+					</a>
+					<input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage">
+					<div class="btn-group">
+						<a data-edit="undo" title="Undo (Ctrl/Cmd+Z)" class="btn">
+							<i class="icon-undo"></i>
+						</a>
+						<a data-edit="redo" title="Redo (Ctrl/Cmd+Y)" class="btn">
+							<i class="icon-repeat"></i>
+						</a>
+					</div>
+					<input id="voiceBtn" type="text" data-edit="inserttext" x-webkit-speech="">
+				</div>
+			</div>
+			<div id="editor">Go ahead&hellip;</div>
 		</section>
-	<?php include VIEW_PATH . '/layouts/footer.php'?>
+	<?php include VIEW . '/layouts/footer.php'?>
 
-	<script src="/js/app.js" type="text/javascript"></script>
-    <script src="/js/wangEditor-3.1.1/wangEditor.js"></script>
-    <script>
-        (function() {
-            var
-                E = window.wangEditor,
-                editor = new E('#edit'),
-                f = document.querySelector('.article-form form'),
-                b = f.querySelector('.form-group button'),
-                title = f.title;
+	<script src="/js/jquery/jquery.3.5.1.min.js"></script>
+	<script src="/js/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="/js/bootstrap/bootstrap-wysiwyg.js"></script>
+	<script src="/js/jquery/jquery.hotkeys.js"></script>
+	<script>
+		$(function () {
+			function initToolbarBootstrapBindings() {
+				var fonts = ['Serif', 'Sans', 'Arial', 'Arial Black', 'Courier',
+						'Courier New', 'Comic Sans MS', 'Helvetica', 'Impact', 'Lucida Grande', 'Lucida Sans', 'Tahoma', 'Times',
+						'Times New Roman', 'Verdana'],
+					fontTarget = $('[title=Font]').siblings('.dropdown-menu');
+				$.each(fonts, function (idx, fontName) {
+					fontTarget.append($('<li><a data-edit="fontName ' + fontName + '" style="font-family:\'' + fontName + '\'">' + fontName + '</a></li>'));
+				});
+				$('a[title]').tooltip({container: 'body'});
+				$('.dropdown-menu input').click(function () {
+					return false;
+				}).change(function () {
+					$(this).parent('.dropdown-menu').siblings('.dropdown-toggle').dropdown('toggle');
+				}).keydown('esc', function () {
+					this.value = '';
+					$(this).change();
+				});
 
-            b.onclick = function() {
-                if (title.value.length < 5) {
-                    alert('标题内容不能小于5');
-                    return;
-                }
-                if (editor.txt.text().length < 10) {
-                    alert('内容不能小于10');
-                    return;
-                }
-                f.text.value = editor.txt.html();
-                f.submit();
-            };
-            // 自定义菜单配置
-            editor.customConfig.menus = [
-                'head',  // 标题
-                'bold',  // 粗体
-                'fontSize',  // 字号
-                'fontName',  // 字体
-                'italic',  // 斜体
-                'underline',  // 下划线
-                'strikeThrough',  // 删除线
-                'foreColor',  // 文字颜色
-                'backColor',  // 背景颜色
-                'link',  // 插入链接
-                'list',  // 列表
-                'justify',  // 对齐方式
-                'quote',  // 引用
-                'emoticon',  // 表情
-                'image',  // 插入图片
-                'table',  // 表格
-                'video',  // 插入视频
-                'code',  // 插入代码
-                'undo',  // 撤销
-                'redo'  // 重复
-            ];
-            // 通过 url 参数配置 debug 模式。url 中带有 wangeditor_debug_mode=1 才会开启 debug 模式
-            // editor.customConfig.debug = location.href.indexOf('wangeditor_debug_mode=1');
-            // 直接设置debug
-            editor.customConfig.debug = true;
+				$('[data-role=magic-overlay]').each(function () {
+					var overlay = $(this), target = $(overlay.data('target'));
+					overlay.css('opacity', 0).css('position', 'absolute').offset(target.offset()).width(target.outerWidth()).height(target.outerHeight());
+				});
+				$('#voiceBtn').hide();
 
-            // 关闭粘贴样式的过滤
-            // editor.customConfig.pasteFilterStyle = true;
-            // 忽略粘贴内容中的图片
-            //editor.customConfig.pasteIgnoreImg = true;
-            // 自定义处理粘贴的文本内容
-            //editor.customConfig.pasteTextHandle = function (content) {
-            //    // content 即粘贴过来的内容（html 或 纯文本），可进行自定义处理然后返回
-            //    return content + '<p>在粘贴内容后面追加一行</p>'
-            //};
-
-            // 插入链接的校验
-            // editor.customConfig.linkCheck = function (text, link) {
-            //     console.log(text) // 插入的文字
-            //     console.log(link) // 插入的链接
-            //
-            //     return true // 返回 true 表示校验成功
-            //     // return '验证失败' // 返回字符串，即校验失败的提示信息
-            // }；
-
-            // 插入网络图片的校验
-            // editor.customConfig.linkImgCheck = function (src) {
-            //     console.log(src); // 图片的链接
-            //
-            //     return true // 返回 true 表示校验成功
-            //     // return '验证失败' // 返回字符串，即校验失败的提示信息
-            // };
-
-            // editor.customConfig.onfocus = function () {
-            //     console.log("onfocus")
-            // };
-
-            // 自定义配置颜色（字体颜色、背景色）
-            editor.customConfig.colors = [
-                '#000000',
-                '#eeece0',
-                '#1c487f',
-                '#4d80bf',
-                '#c24f4a',
-                '#8baa4a',
-                '#7b5ba1',
-                '#46acc8',
-                '#f9963b',
-                '#ea6f5a'
-            ];
-
-            // 自定义字体
-            editor.customConfig.fontNames = [
-                '宋体',
-                '微软雅黑',
-                'Arial',
-                'Tahoma',
-                'Verdana'
-            ];
-
-            // 下面两个配置，使用其中一个即可显示“上传图片”的tab。但是两者不要同时使用！！！
-            // editor.customConfig.uploadImgShowBase64 = true;   // 使用 base64 保存图片
-            // editor.customConfig.uploadImgServer = '/upload/';  // 上传图片到服务器
-
-            // 上传图片到服务器
-            editor.customConfig.uploadFileName = 'file'; //设置文件上传的参数名称
-            editor.customConfig.uploadImgServer = '/uploads'; //设置上传文件的服务器路径
-            editor.customConfig.uploadImgMaxSize = 3 * 1024 * 1024; // 将图片大小限制为 3M
-            //自定义上传图片事件
-            editor.customConfig.uploadImgHooks = {
-                before : function(xhr, editor, files) {
-                    // 图片上传之前触发
-                    // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，files 是选择的图片文件
-                    // 如果返回的结果是 {prevent: true, msg: 'xxxx'} 则表示用户放弃上传
-                    // return {
-                    //     prevent: true,
-                    //     msg: '放弃上传'
-                    // }
-                },
-                success : function(xhr, editor, result) {
-                    // 图片上传并返回结果，图片插入成功之后触发
-                    // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
-                },
-                fail : function(xhr, editor, result) {
-                    // 图片上传并返回结果，但图片插入错误时触发
-                    // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
-                },
-                error : function(xhr, editor) {
-                    // 图片上传出错时触发
-                    // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
-                },
-                timeout : function(xhr, editor) {
-                    // 图片上传超时时触发
-                    // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
-                },
-                // 如果服务器端返回的不是 {errno:0, data: [...]} 这种格式，可使用该配置
-                // （但是，服务器端返回的必须是一个 JSON 格式字符串！！！否则会报错）
-                customInsert: function (insertImg, result, editor) {
-                    // 图片上传并返回结果，自定义插入图片的事件（而不是编辑器自动插入图片！！！）
-                    // insertImg 是插入图片的函数，editor 是编辑器对象，result 是服务器端返回的结果
-                    // 举例：假如上传图片成功后，服务器端返回的是 {url:'....'} 这种格式，即可这样插入图片：
-
-                    var url = result.url;
-                    insertImg(url)
-                    // result 必须是一个 JSON 格式字符串！！！否则报错
-                }
-            };
-
-            // 隐藏“网络图片”tab
-            editor.customConfig.showLinkImg = false;
-
-            editor.create();
-            editor.txt.append(`<?php echo isset($text) ? $text : ''?>`);
-        })();
-    </script>
+			};
+			initToolbarBootstrapBindings();
+			$('#editor').wysiwyg();
+			window.prettyPrint && prettyPrint();
+		});
+	</script>
 </body>
 </html>

@@ -12,7 +12,7 @@
 	<div id="app">
         <!--codecasts.com-->
         <?php include VIEW . '/layouts/header.php'?>
-        <div class="container">
+        <section class="container">
             <div class="row mt-3 mb-4">
                 <!--主体内容-->
                 <div class="col-sm-9 col-md-9 col-sm-9">
@@ -160,7 +160,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <?php include VIEW . '/layouts/footer.php'?>
 	</div>

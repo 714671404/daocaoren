@@ -54,7 +54,7 @@
                 </li>-->
             </ul>
             <!--用户信息-->
-            <div class="navbar-nav user-info">
+            <div class="user-info">
             <?php
 			if (!isset($_SESSION['id'])) {?>
 				<a class="btn btn-link" href="/login">登陆</a>
@@ -62,7 +62,7 @@
 			<?php } else {?>
                 <div class="dropdown ml-3 mr-3">
                     <img src="<?php echo $_SESSION['avatar']?>"
-                         class="dropdown-toggle rounded-circle"
+                         class="rounded-circle"
                          id="dropdownMenuUser"
                          data-toggle="dropdown"
                          aria-haspopup="true"
