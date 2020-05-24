@@ -1,5 +1,5 @@
 <header id="header" class="bg-white shadow-sm">
-    <nav class="navbar navbar-expand-lg navbar-light mx-auto p-1">
+    <nav class="navbar navbar-expand-lg navbar-light mx-auto p-2">
         <!--.navbar-text 用于添加垂直居中的文本字符串。-->
         <!--.navbar-brand 为您的公司，产品或项目名称。-->
         <a href="/" class="navbar-brand ml-3">稻草人</a>
@@ -57,8 +57,8 @@
             <div class="navbar-nav user-info">
             <?php
 			if (!isset($_SESSION['id'])) {?>
-				<a class="btn" href="/login">登陆</a>
-				<a class="btn" href="/register">注册</a>
+				<a class="btn btn-link" href="/login">登陆</a>
+				<a class="btn btn-link" href="/register">注册</a>
 			<?php } else {?>
                 <div class="dropdown ml-3 mr-3">
                     <img src="<?php echo $_SESSION['avatar']?>"
@@ -68,12 +68,12 @@
                          aria-haspopup="true"
                          aria-expanded="false"
                          data-offset="10, 20">
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuUser">
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" aria-labelledby="dropdownMenuUser">
                         <a href="/user/<?php echo $_SESSION['id']?>" class="dropdown-item">个人中心</a>
                         <div class="dropdown-divider"></div>
                         <a href="/article/create" class="dropdown-item">创建文章</a>
                         <div class="dropdown-divider"></div>
-                        <a href="/logout" class="dropdown-item">注销</a>
+                        <a href="/logout" class="dropdown-item">退出</a>
                     </div>
                 </div>
             <?php }?>
