@@ -13,12 +13,12 @@
             <div class="article-form">
                 <form action="/article/store" method="post">
                     <div class="form-group">
-                        <input type="text" name="title" placeholder="标题" value="<?php echo isset($title) ? $data['title'] : ''?>">
+                        <input type="text" name="title" placeholder="标题" value="">
                     </div>
                     <div class="form-group">
                         <div id="edit"></div>
                         <input type="hidden" name="text" value="">
-                        <input type="hidden" name="u_id" value="<?php echo $_SESSION['id']?>">
+                        <input type="hidden" name="u_id" value="">
                     </div>
                     <div class="form-group">
                         <button class="btn blue-btn">提交</button>

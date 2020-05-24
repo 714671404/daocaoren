@@ -60,18 +60,20 @@
 				<a class="btn" href="/login">登陆</a>
 				<a class="btn" href="/register">注册</a>
 			<?php } else {?>
-                <div class="dropdown mr-3 ml-3">
+                <div class="dropdown ml-3 mr-3">
                     <img src="<?php echo $_SESSION['avatar']?>"
                          class="dropdown-toggle rounded-circle"
-                         id="dropdownMenuButton"
+                         id="dropdownMenuUser"
                          data-toggle="dropdown"
                          aria-haspopup="true"
-                         aria-expanded="false">
-                    <div class="dropdown-menu mt-2"
-                         aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="/article/<?php echo $_SESSION['id']?>">个人中心</a>
-                        <a class="dropdown-item" href="/article/create">添加文章</a>
-                        <a class="dropdown-item" href="/logout">注销</a>
+                         aria-expanded="false"
+                         data-offset="10, 20">
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuUser">
+                        <a href="/user/<?php echo $_SESSION['id']?>" class="dropdown-item">个人中心</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/article/create" class="dropdown-item">创建文章</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/logout" class="dropdown-item">注销</a>
                     </div>
                 </div>
             <?php }?>

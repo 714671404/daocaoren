@@ -4,11 +4,12 @@
     <meta charset="utf-8">
     <title>个人信息</title>
     <link href="/images/favicon.ico" rel="icon" type="image/ico">
+    <link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link href="/css/app.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div id="app">
-        <?php include __DIR__ . '/../layouts/header.php'?>
+        <?php include VIEW . '/layouts/header.php'?>
 
         <section class="container">
 			<div class="main box">
@@ -25,8 +26,9 @@
 			</aside>
         </section>
 
-        <?php include __DIR__ . '/../layouts/footer.php'?>
+        <?php include VIEW . '/layouts/footer.php'?>
     </div>
-<script src="/js/app.js" type="test/javascript"></script>
+    <script src="/js/jquery/jquery.3.5.1.min.js"></script>
+    <script src="/js/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>

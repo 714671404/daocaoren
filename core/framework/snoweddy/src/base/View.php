@@ -20,8 +20,9 @@ class View
 
         //判断视图文件是否存在
         if (is_file($template)) {
-            return include($template);
-            $template = file_get_contents($template);
+            include($template);
+            return;
+                $template = file_get_contents($template);
 //            php 代码不解读
 //            preg_match_all($this->patterns['include'], $template, $arr);
 //            foreach ($arr[0] as $val) {

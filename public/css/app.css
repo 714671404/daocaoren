@@ -95,8 +95,9 @@ body {
 	color: #b4b4b4;
 }
 .user-info img {
-	width: 50px;
-	height: 50px;
+	width: 45px;
+	height: 45px;
+	cursor: pointer;
 }
 
 #footer {}
