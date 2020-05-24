@@ -54,13 +54,28 @@
                 </li>-->
             </ul>
             <!--用户信息-->
+            <div class="navbar-nav user-info">
             <?php
-			if (isset($_SESSION['name'])) {?>
-			<div class="navbar-nav user-info">
+			if (!isset($_SESSION['id'])) {?>
 				<a class="btn" href="/login">登陆</a>
 				<a class="btn" href="/register">注册</a>
-			</div>
-			<?php }?>
+			<?php } else {?>
+                <div class="dropdown mr-3 ml-3">
+                    <img src="<?php echo $_SESSION['avatar']?>"
+                         class="dropdown-toggle rounded-circle"
+                         id="dropdownMenuButton"
+                         data-toggle="dropdown"
+                         aria-haspopup="true"
+                         aria-expanded="false">
+                    <div class="dropdown-menu mt-2"
+                         aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="/article/<?php echo $_SESSION['id']?>">个人中心</a>
+                        <a class="dropdown-item" href="/article/create">添加文章</a>
+                        <a class="dropdown-item" href="/logout">注销</a>
+                    </div>
+                </div>
+            <?php }?>
+            </div>
         </div>
     </nav>
 </header>

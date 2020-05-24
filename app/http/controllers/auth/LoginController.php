@@ -20,7 +20,7 @@ class LoginController extends Controller
             $_SESSION['name'] = $result['name'];
             $_SESSION['username'] = $result['username'];
             $_SESSION['avatar'] = $result['avatar'];
-            return $this->redirect('/');
+            return redirect('/');
         } else {
             echo '<script>alert(\'账户或用户名不正确!\');</script>';
             return view('auth/login');

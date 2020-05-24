@@ -11,8 +11,7 @@
 <body>
 	<div id="app">
         <!--codecasts.com-->
-		<!--header文件php代码不读问题-->
-		<?php include VIEW . '/layouts/header.php'?>
+        <?php include VIEW . '/layouts/header.php'?>
         <div class="container">
             <div class="row mt-3 mb-4">
                 <!--主体内容-->

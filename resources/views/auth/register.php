@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="app">
-        @include('layouts.header')
+        <?php include VIEW . '/layouts/header.php'?>
 		<section class="container">
             <div class="w-50 bg-white m-5 ml-auto mr-auto">
                 <form class="p-5 shadow rounded" id="fromAuth" action="/register" method="post" novalidate>
@@ -38,7 +38,7 @@
                 </form>
             </div>
 		</section>
-		@include('layouts.footer')
+        <?php include VIEW . '/layouts/footer.php'?>
 	</div>
 	<script src="/js/jquery/jquery.3.5.1.min.js"></script>
 	<script src="/js/bootstrap/bootstrap.min.js"></script>
