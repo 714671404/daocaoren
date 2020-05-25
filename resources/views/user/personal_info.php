@@ -18,18 +18,28 @@
 						<a class="float-left w-p-80 h-p-80" href="/user/<?php echo $data['id']?>">
 							<img class="rounded-circle img-fluid" src="<?php echo $data['avatar']?>">
 						</a>
-						<div class="personal-name">
-							<p><?php echo $data['name']?></p>
-							<div>
-								<a class="btn btn-link">文章 <span>166</span></a>
-							</div>
+						<div class="personal-user">
+							<a class="personal-head d-block pt-2 mb-2" href="/user/<?php echo $data['id']?>"><?php echo $data['name']?></a>
+							<ul class="nav mt-2 personal-body">
+								<li class="navbar-item">
+									<a href="/">文章（1324234）</a>
+								</li>
+								<li class="nav-item">
+									<a href="/">关注（1324234）</a>
+								</li>
+								<li class="nav-item">
+									<a href="/">粉丝（1324234）</a>
+								</li>
+								<li class="nav-item">
+									<a href="/" class="p-0">收藏喜欢（1324234）</a>
+								</li>
+							</ul>
 						</div>
 					</div>
+					<div class=""></div>
 				</div>
 			</div>
 		</section>
-
-        <?php include VIEW . '/layouts/footer.php'?>
     </div>
     <script src="/js/jquery/jquery.3.5.1.min.js"></script>
     <script src="/js/bootstrap/bootstrap.min.js"></script>

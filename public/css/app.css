@@ -1,4 +1,7 @@
-a {text-decoration: none; color: inherit;}
+a,a:link,a:visited,a:hover,a:active{
+	text-decoration: none;
+	color:inherit;
+}
 @font-face {font-family: "iconfont";
 	src: url('iconfont.eot?t=1590042121613'); /* IE9 */
 	src: url('iconfont.eot?t=1590042121613#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -108,10 +111,22 @@ body {
 .h-p-80 {
 	height: 80px;
 }
-.personal-info>.personal-name {
-	padding-left: 100px;
-	font-size: 20px;
+.personal-info>.personal-user {
+	padding-left: 94px;
 }
+.personal-head {
+	font-size: 21px;
+	font-weight: 700;
+	vertical-align: middle;
+}
+.personal-body {
+	font-size: 12px;
+	color: #969696;
+}
+.personal-body>li>a {
+	padding-right: 10px;
+}
+
 .rounded-10 {
 	border-radius: 5px;
 }
