@@ -35,7 +35,7 @@ Route::get('user/{id}', 'user\UserController@index');
 Route::get('article/{id}', 'article\ArticleController@show');
 Route::get('article/create', 'article\ArticleController@create');
 Route::post('article/store', 'article\ArticleController@store');
-Route::post('uploads', 'Article\ArticleController@upload');
+Route::post('uploads', 'article\ArticleController@upload');
 
 
 /*

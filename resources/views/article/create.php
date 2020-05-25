@@ -57,12 +57,13 @@
 	<!--https://www.tiny.cloud/docs/demo/basic-example/#-->
 	<!--https://www.teakki.com/p/57dfb282d3a7507f975e7ad0-->
 	<!--https://www.teakki.com/p/57dfb282d3a7507f975e7ad0-->
+    <!--https://simditor.tower.im/-->
 		<section class="container">
 			<div style="margin-top:20px" class="input-group input-group-lg rounded">
 				<span class="input-group-addon"></span>
 				<input type="text" placeholder="标题" name="title" class="form-control">
 			</div>
-			<div style="margin-top:10px" data-role="editor-toolbar" data-target="#editor" class="btn-toolbar">
+			<div style="margin-top:10px" data-role="editor-toolbar" data-target="#editor" class="btn-toolbar border-left border-top border-right">
 				<div class="btn-group">
 					<a data-toggle="dropdown" title="Font" class="btn dropdown-toggle">
 						<i class="glyphicon glyphicon-font"></i>
