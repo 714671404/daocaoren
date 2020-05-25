@@ -9,127 +9,28 @@
 </head>
 <body>
 	<div id="app">
-		<?php include __DIR__ . "/../layouts/header.php"?>
+		<?php include VIEW . "/layouts/header.php"?>
 		<section class="container">
-			<div class="main box">
-                <!--文章内容-->
-				<div class="article-content">
-                    <h3 class="title"><?php echo $data['title']?></h3>
-                    <div class="post-author">
-                        <a href="/" class="author-info-img"><img src="<?php echo $data['avatar']?>"></a>
-                        <div class="author-info">
-                            <div class="author-info-head">
-                                <a href="/" class="author-info-name"><?php echo $data['name']?></a>
-                            </div>
-                            <div class="article-time">
-                                <span><?php echo $data['created_at']?></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text"><?php echo $data['text']?></div>
-                </div>
-                <!--功能区-->
-                <div class="content-actions">
-                    <span class="btn">
-                        <i class="iconfont icon-aixin"></i>
-                        <span>点赞</span>
-                        <span>100</span>
-                    </span>
-                    <span class="btn">
-                        <i class="iconfont icon-pinglun"></i>
-                        <span>评论</span>
-                        <span>12312</span>
-                    </span>
-                    <span class="btn">
-                        <i class="iconfont icon-shoucang"></i>
-                        <span>收藏</span>
-                    </span>
-                </div>
-
-                <!--评论区-->
-                <div class="comment-area">
-                    <h3 class="title">70 评论</h3>
-
-                    <!--发布评论-->
-                    <div class="post-comment">
-                        <input type="text" placeholder="发布评论">
-                        <button class="btn">发布</button>
-                    </div>
-                    <!--评论列表-->
-                    <ul class="comment-list">
-                        <li>
-                            <!--发布人信息-->
-                            <a href="javascript:void(0)"><img src="/upload/avatar/default.jpg"></a>
-                            <div class="comment-user">
-                                <p>蓝色火焰</p>
-                                <p>2020-5-18 09:06:08</p>
-                            </div>
-                            <div class="comment-message">这条评论很好好</div>
-<!--                            <div class="comment-actions">-->
-<!--                                <a href="javascript:void(0)">-->
-<!--                                    <i class="iconfont icon-xiaoxikefuxinxitongzhi"></i>-->
-<!--                                    <button class="btn click">回复</button>-->
-<!--                                </a>-->
-<!--                            </div>-->
-<!--                            <ul class="comment-list-item">-->
-<!--                                <li>-->
-<!--                                    <a href="javascript:void(0)"><img src="/upload/avatar/default.jpg"></a>-->
-<!--                                    <div class="comment-user">-->
-<!--                                        <p>蓝色火焰</p>-->
-<!--                                        <p>2020-5-18 09:16:12</p>-->
-<!--                                    </div>-->
-<!--                                    <div class="comment-message">这条消息很好好好好！</div>-->
-<!--                                    <div class="comment-actions">-->
-<!--                                        <span>-->
-<!--                                            <i class="iconfont icon-xiaoxikefuxinxitongzhi"></i>-->
-<!--                                            <button class="btn click">回复</button>-->
-<!--                                        </span>-->
-<!--                                    </div>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a href="javascript:void(0)"><img src="/upload/avatar/default.jpg"></a>-->
-<!--                                    <div class="comment-user">-->
-<!--                                        <p>蓝色火焰</p>-->
-<!--                                        <p>2020-5-18 09:16:12</p>-->
-<!--                                    </div>-->
-<!--                                    <div class="comment-message">这条消息很好好好好！</div>-->
-<!--                                    <div class="comment-actions">-->
-<!--                                        <span>-->
-<!--                                            <i class="iconfont icon-xiaoxikefuxinxitongzhi"></i>-->
-<!--                                            <button class="btn click">回复</button>-->
-<!--                                        </span>-->
-<!--                                    </div>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-                            <!--回复-->
-<!--                            <div class="post-comment hidden">-->
-<!--                                <input type="text" placeholder="发布评论">-->
-<!--                                <button>发布</button>-->
-<!--                            </div>-->
-                        </li>
-                    </ul>
-                </div>
+			<div class="row m-3">
+				<div class="pl-3 pr-3 pt-4 pb-4 bg-white rounded-10 shadow">
+					<div class="h3 p-3"><?php echo $data['title']?></div>
+					<div class="user-info p-3 border-bottom">
+						<a class="float-left" href="/user/<?php echo $data['user_id']?>"><img class="rounded-circle img-fluid" src="<?php echo $data['avatar']?>"></a>
+						<div class="author-info">
+							<a href="/user/<?php echo $data['user_id']?>"><?php echo $data['name']?></a>
+							<p><?php echo $data['created_at']?></p>
+						</div>
+					</div>
+					<div class="text-body text-wrap p-4 mt-1"><?php echo $data['text']?></div>
+				</div>
 			</div>
-            <aside class="sidebar box">开发中</aside>
 		</section>
-		<?php include __DIR__ . "/../layouts/footer.php"?>
+		<?php include VIEW . "/layouts/footer.php"?>
 	</div>
     <script src="/js/jquery/jquery.3.5.1.min.js"></script>
     <script src="/js/bootstrap/bootstrap.min.js"></script>
+	<script src="/js/jquery/jquery.base64.js"></script>
     <script>
-        (function() {
-            var b = document.querySelectorAll('.click');
-            var comment_input = document.querySelector('#comment-input');
-            for (var i = 0; i < b.length; i++) {
-                b[i].onclick = function() {
-                    if (comment_input.className.indexOf('hidden') !== -1) {
-                        comment_input.className = comment_input.className.replace(/hidden/, 'show');
-                    } else {
-                        comment_input.className = comment_input.className.replace(/show/, 'hidden');
-                    }
-                }
-            }
-        })()
     </script>
 </body>
 </html>

@@ -15,8 +15,6 @@ class View
     {
         extract($data);
         $template = VIEW . '/' . $path . '.php';
-        $pattern = [];
-        $data = [];
 
         //判断视图文件是否存在
         if (is_file($template)) {

@@ -11,20 +11,23 @@
     <div id="app">
         <?php include VIEW . '/layouts/header.php'?>
 
-        <section class="container">
-			<div class="main box">
-				<div class="top">
-					<a href="/user/<?php echo $_SESSION['id']?>" class="avatar">
-						<img src="<?php echo $_SESSION['avatar']?>">
-					</a>
-					<div class="title"></div>
-					<div class="info"></div>
+		<section class="container">
+			<div class="row">
+				<div class="col-12 p-3">
+					<div class="personal-info">
+						<a class="float-left w-p-80 h-p-80" href="/user/<?php echo $data['id']?>">
+							<img class="rounded-circle img-fluid" src="<?php echo $data['avatar']?>">
+						</a>
+						<div class="personal-name">
+							<p><?php echo $data['name']?></p>
+							<div>
+								<a class="btn btn-link">文章 <span>166</span></a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<aside class="sidebar box">
-				<h3>暂未设计</h3>
-			</aside>
-        </section>
+		</section>
 
         <?php include VIEW . '/layouts/footer.php'?>
     </div>

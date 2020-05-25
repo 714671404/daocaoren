@@ -43,6 +43,4 @@ class Model
     {
         return $this->db->lastInsertId();
     }
-
-
 }

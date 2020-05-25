@@ -85,7 +85,9 @@
 				$.each(files, function (idx, fileInfo) {
 					if (/^image\//.test(fileInfo.type)) {
 						$.when(readFileIntoDataUrl(fileInfo)).done(function (dataUrl) {
-							execCommand('insertimage', dataUrl);
+							// insertImage 命令仅限设置路径 因此修改为innerHTML
+							// 原代码execCommand('insertImage', dataURl);
+							execCommand('insertHTML', '<img src="' + dataUrl + '" style="max-width: 80%;">');
 						}).fail(function (e) {
 							options.fileUploadError("file-reader", e);
 						});

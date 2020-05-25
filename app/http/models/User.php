@@ -60,6 +60,15 @@ class User extends Model
         );
         return $this->where($sql)->first();
     }
+    public function get_user($id)
+    {
+        $sql = sprintf(
+            "SELECT id, name, avatar FROM %s WHERE id='%s'",
+            $this->table,
+            $id
+        );
+        return $this->where($sql)->first();
+    }
     public function where($sql)
     {
         foreach ($this->query($sql) as $key => $val) {

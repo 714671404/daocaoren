@@ -37,11 +37,11 @@ class ArticleController extends Controller
         $data = [
             'u_id' => $_POST['u_id'],
             'title' => $_POST['title'],
-            'text' => htmlspecialchars($_POST['text'])
+            'text' => $_POST['text']
         ];
         $result = $this->article->add($data);
         if ($result) {
-            $this->redirect("/article/{$result}");
+            return redirect("/article/{$result}");
         } else {
             echo "<script>alert('发布失败');</script>";
             return view('/article/create', $_POST);

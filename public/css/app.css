@@ -99,5 +99,20 @@ body {
 	height: 45px;
 	cursor: pointer;
 }
-
+.user-info>.author-info {
+	padding-left: 52px;
+}
+.w-p-80 {
+	width: 80px;
+}
+.h-p-80 {
+	height: 80px;
+}
+.personal-info>.personal-name {
+	padding-left: 100px;
+	font-size: 20px;
+}
+.rounded-10 {
+	border-radius: 5px;
+}
 #footer {}
