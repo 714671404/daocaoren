@@ -18,9 +18,18 @@ class HomeController extends Controller
 
     public function show($id)
     {
-        return response([
-            'status' => 200,
-            'data' => $this->article->show($id)
-        ]);
+        $result = $this->article->show($id);
+        if ($result) {
+            $data = [
+                'status' => 200,
+                'data' => $this->article->show($id)
+            ];
+        } else {
+            $data = [
+                'status' => 201,
+                'data' => null
+            ];
+        }
+        return response($data);
     }
 }

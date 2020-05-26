@@ -185,6 +185,63 @@
 				}
 				$('#nav-tab').on('show.bs.tab', loading);
 				function loading(e) {
+					var arr = [
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						},
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						},
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						},
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						},
+						{
+							id: 1,
+							title: '基于谷歌最新AAC架构打造的Android MVVM开发框架，使用该框架可以快速开发一个高质量、易维护的Android应用',
+							text: '读完《平凡的世界》，心里久久不能平静。除了对人生苦难难以平复之外，对路遥笔下几个主人公的遭遇也是念念不忘。趁着自己一颗还没有冰冷的心，书中故事里',
+							img: '/images/banner/banner_3.jpg',
+							url: '/article/1',
+							name: '碧海蓝天',
+							comment: 48,
+							attention: 200,
+							time: "2020-5-21"
+						}
+					],
 						dom = $(typeof e.target === 'string' ? e.getAttribute('href') : e.target.getAttribute('href'))[0].children[0],
 						tmp;
 					$.ajax({
@@ -198,7 +255,7 @@
 									tmp = "" +
 										"<li class=\"container pt-3 pb-3 border-bottom\">" +
 										"   <div class=\"row\">" +
-										"       <div class=\"col-12 title-row\">" +
+										"       <div class=\"col-sm-12 title-row\">" +
 										"           <a href=\"/article/" + data[i].id + "\" class=\"title\">" + data[i].title + "</a>" +
 										"           <p class=\"body mt-1 mt-1 mb-1\"></p>" +
 										"           <ul class=\"nav\">" +
@@ -226,6 +283,8 @@
 										"</li>";
 									dom.innerHTML += tmp;
 								}
+							} else {
+								dom.innerHTML = "<h4>暂无文章</h4>";
 							}
 						}
 					});
