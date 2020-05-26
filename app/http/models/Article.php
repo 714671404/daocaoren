@@ -5,11 +5,6 @@ use snoweddy\src\base\Model;
 
 class Article extends Model
 {
-    public function all()
-    {
-
-    }
-
     public function add($data)
     {
         $sql = sprintf(
@@ -44,5 +39,25 @@ class Article extends Model
             }
             return $data;
         }
+    }
+    public function show($id)
+    {
+        // 分页sql
+        // SELECT a.id, a.title, u.avatar, a.user_id, u.name, a.created_at FROM articles as a INNER JOIN users as u
+        // WHERE a.id>='%s' and u.id=a.user_id ORDER BY a.id DESC LIMIT 0, 10
+        $sql = sprintf(
+            "
+                SELECT a.id, a.title, u.avatar, a.user_id, u.name, a.created_at FROM articles as a INNER JOIN users as u 
+                WHERE a.id>='%s' and u.id=a.user_id ORDER BY a.id DESC
+            ",
+            $id
+        );
+        foreach ($this->query($sql) as $key => $val) {
+            $this->data[$key] = array_merge($val, [
+                'comment' => rand(0, 1000),
+                'attention' => rand(0, 999)
+            ]);
+        }
+        return $this->data;
     }
 }

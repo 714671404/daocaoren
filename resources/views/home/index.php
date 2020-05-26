@@ -47,7 +47,8 @@
                                    id="nav-popular-tab"
                                    data-toggle="tab"
                                    href="#nav-popular"
-                                   role="tab"
+                                   role="tab",
+								   data-where="desc"
                                    aria-controls="nav-popular"
                                    aria-selected="true">
                                     热门
@@ -56,7 +57,8 @@
                                    id="nav-new-tab"
                                    data-toggle="tab"
                                    href="#nav-new"
-                                   role="tab"
+                                   role="tab",
+								   data-where=""
                                    aria-controls="nav-new"
                                    aria-selected="false">
                                     最新
@@ -65,7 +67,8 @@
                                    id="nav-new-list-tab"
                                    data-toggle="tab"
                                    href="#nav-new-list"
-                                   role="tab"
+                                   role="tab",
+								   data-where="desc"
                                    aria-controls="nav-new-list"
                                    aria-selected="false">
                                     榜单
@@ -241,43 +244,53 @@
 					],
 						dom = $(typeof e.target === 'string' ? e.getAttribute('href') : e.target.getAttribute('href'))[0].children[0],
 						tmp;
-					for (var i = 0; i < arr.length; i++) {
-						tmp = "" +
-							"<li class=\"container pt-3 pb-3 border-bottom\">" +
-							"   <div class=\"row\">" +
-							"       <div class=\"col-9 title-row\">" +
-							"           <a href=\"" + arr[i].url + "\" class=\"title\">" + arr[i].title + "</a>" +
-							"           <p class=\"body mt-1 mt-1 mb-1\">" + arr[i].text + "</p>" +
-							"           <ul class=\"nav\">" +
-							"               <li class=\"nav-item\">" +
-							"                   <a class=\"nav-list mr-2\" href=\"/user/" + arr[i].id + "\">" +
-							"                       <span>" + arr[i].name + "</span>" +
-							"                   </a>" +
-							"               </li>" +
-							"               <li class=\"nav-item\">" +
-							"                   <a class=\"nav-list mr-2\" href=\"/user/" + arr[i].id + "\">" +
-							"                       <i class=\"iconfont icon-xiaoxikefuxinxitongzhi\"></i>" + arr[i].comment +
-							"                   </a>" +
-							"               </li>" +
-							"               <li class=\"nav-item\">" +
-							"                   <span class=\"nav-list mr-2\">" +
-							"                       <i class=\"iconfont icon-aixin\"></i>" + arr[i].attention +
-							"                   </span>" +
-							"               </li>" +
-							"               <li class=\"nav-item\">" +
-							"                   <span class=\"nav-list mr-2\">" + arr[i].time + "</span>" +
-							"               </li>" +
-							"           </ul>" +
-							"       </div>" +
-							"       <div class=\"col-3\">" +
-							"           <a href=\"/article/" + arr[i].id + "\">" +
-							"               <img src=\"" + arr[i].img + "\" class=\"img-fluid\">" +
-							"           </a>" +
-							"       </div>" +
-							"   </div>" +
-							"</li>";
-						dom.innerHTML += tmp;
-					}
+					$.ajax({
+						url: '/show/1/',
+						type: 'get',
+						success: function(data) {
+							data = JSON.parse(data);
+							if (data.status === 200) {
+								data = data.data;
+								for (var i = 0; i < data.length; i++) {
+									tmp = "" +
+										"<li class=\"container pt-3 pb-3 border-bottom\">" +
+										"   <div class=\"row\">" +
+										"       <div class=\"col-9 title-row\">" +
+										"           <a href=\"/article/" + data[i].id + "\" class=\"title\">" + data[i].title + "</a>" +
+										"           <p class=\"body mt-1 mt-1 mb-1\"></p>" +
+										"           <ul class=\"nav\">" +
+										"               <li class=\"nav-item\">" +
+										"                   <a class=\"nav-list mr-2\" href=\"/user/" + data[i].user_id + "\">" +
+										"                       <span>" + data[i].name + "</span>" +
+										"                   </a>" +
+										"               </li>" +
+										"               <li class=\"nav-item\">" +
+										"                   <a class=\"nav-list mr-2\" href=\"/user/" + data[i].user_id + "\">" +
+										"                       <i class=\"iconfont icon-xiaoxikefuxinxitongzhi\"></i>" + data[i].comment +
+										"                   </a>" +
+										"               </li>" +
+										"               <li class=\"nav-item\">" +
+										"                   <span class=\"nav-list mr-2\">" +
+										"                       <i class=\"iconfont icon-aixin\"></i>" + data[i].attention +
+										"                   </span>" +
+										"               </li>" +
+										"               <li class=\"nav-item\">" +
+										"                   <span class=\"nav-list mr-2\">" + data[i].created_at + "</span>" +
+										"               </li>" +
+										"           </ul>" +
+										"       </div>" +
+										"       <div class=\"col-3\">" +
+										"           <a href=\"/article/" + data[i].user_id + "\">" +
+										"               <img src=\"" + data[i].avatar + "\" class=\"img-fluid\">" +
+										"           </a>" +
+										"       </div>" +
+										"   </div>" +
+										"</li>";
+									dom.innerHTML += tmp;
+								}
+							}
+						}
+					});
 				}
 			});
     </script>

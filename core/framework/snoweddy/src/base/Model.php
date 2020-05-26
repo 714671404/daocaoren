@@ -12,6 +12,7 @@ class Model
     protected $table;
     protected $primary = 'id';
     protected $db;
+    protected $data;
 
     public function __construct()
     {
@@ -43,4 +44,20 @@ class Model
     {
         return $this->db->lastInsertId();
     }
+
+    /*
+     * 查找全部数据
+     */
+    public function all()
+    {
+        $sql = sprintf(
+            "SELECT * from %s",
+            $this->table
+        );
+        foreach ($this->query($sql) as $key => $val) {
+            $this->data[$key] = $val;
+        }
+        return $this->data;
+    }
+
 }

@@ -12,16 +12,16 @@
 		<?php include VIEW . "/layouts/header.php"?>
 		<section class="container">
 			<div class="row m-3">
-				<div class="pl-3 pr-3 pt-4 pb-4 bg-white rounded-10 shadow">
+				<div class="col-lg-12 pl-3 pr-3 pt-4 pb-4 bg-white rounded-10 shadow">
 					<div class="h3 p-3"><?php echo $data['title']?></div>
-					<div class="user-info p-3 border-bottom">
+					<div class="user-info m-3 border-bottom">
 						<a class="float-left" href="/user/<?php echo $data['user_id']?>"><img class="rounded-circle img-fluid" src="<?php echo $data['avatar']?>"></a>
 						<div class="author-info">
 							<a href="/user/<?php echo $data['user_id']?>"><?php echo $data['name']?></a>
 							<p><?php echo $data['created_at']?></p>
 						</div>
 					</div>
-					<div class="text-body text-wrap p-4 mt-1"><?php echo $data['text']?></div>
+					<div class="text-body text-wrap m-4 pt-1 overflow-hidden"><?php echo $data['text']?></div>
 				</div>
 			</div>
 		</section>
