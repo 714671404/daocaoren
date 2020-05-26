@@ -47,7 +47,7 @@ class Article extends Model
         // WHERE a.id>='%s' and u.id=a.user_id ORDER BY a.id DESC LIMIT 0, 10
         $sql = sprintf(
             "
-                SELECT a.id, a.title, u.avatar, a.user_id, u.name, a.created_at FROM articles as a INNER JOIN users as u 
+                SELECT a.id, a.title, a.user_id, u.name, a.created_at FROM articles as a INNER JOIN users as u 
                 WHERE a.id>='%s' and u.id=a.user_id ORDER BY a.id DESC
             ",
             $id
